@@ -60,8 +60,8 @@ set number
 set nowrap
 set autoindent
 set smartindent
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set guioptions-=T
 set expandtab
 set hlsearch
@@ -112,7 +112,7 @@ source ~/.vim/colemak.vim
 execute pathogen#infect()
 
 " Ignore stupid files
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/migrations/*,*.pyc,*/node_modules/*,*/static/dist/*,*/things/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/migrations/*,*.pyc,*/node_modules/*,*/dist/*,*/things/*
 
 " Setup session plugin
 let g:session_autosave = 'yes'
@@ -143,6 +143,7 @@ if has("gui_running")
 endif
 
 " Linters
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_coffeescript_checkers = ['coffee']
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501'
-let g:syntastic_javascript_checkers = ['jshint']

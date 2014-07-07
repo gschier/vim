@@ -1,6 +1,6 @@
 " ~/.vim/sessions/swu.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 06 July 2014 at 20:23:17.
+" Created by session.vim 2.6.1 on 06 July 2014 at 20:38:11.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -41,12 +41,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 115 - ((22 * winheight(0) + 31) / 62)
+let s:l = 115 - ((48 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 115
-normal! 064|
+normal! 013|
 lcd ~/Workspace/sendwithus
 tabnext 1
 if exists('s:wipebuf')

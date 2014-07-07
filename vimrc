@@ -10,13 +10,7 @@
 " properly set to work with the Vim-related packages available in Debian.
 runtime! debian.vim
 
-" Uncomment the next line to make Vim more Vi-compatible
-" NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
-" options, so any other options should be set AFTER setting 'compatible'.
-"set compatible
-
-" Vim5 and later versions support syntax highlighting. Uncommenting the
-" following enables syntax highlighting by default.
+" Enable syntax highlighting
 if has("syntax")
   syntax on
 endif
@@ -56,6 +50,7 @@ set laststatus=2    " Show n last commands
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
+
 set number
 set nowrap
 set autoindent
@@ -161,6 +156,9 @@ nmap <C-w><C-w> :q<CR>
 nmap <C-s> :w<CR>
 nnoremap <esc> :noh<return><esc>
 nnoremap <C-c> :noh<return><C-c>
+
+" Git Gutter
+let g:gitgutter_sign_column_always = 1
 
 " Airline
 let g:airline_powerline_fonts = 1

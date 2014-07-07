@@ -17,9 +17,9 @@ runtime! debian.vim
 
 " Vim5 and later versions support syntax highlighting. Uncommenting the
 " following enables syntax highlighting by default.
-if has("syntax") 
-  syntax on 
-endif 
+if has("syntax")
+  syntax on
+endif
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
@@ -61,6 +61,7 @@ set nowrap
 set autoindent
 set smartindent
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 set guioptions-=T
 set expandtab
@@ -73,27 +74,30 @@ set nobackup
 set nowritebackup
 set noswapfile
 set wildmode=list:longest
-set guifont=Ubuntu\ Mono\ 16
+set guifont=Ubuntu\ Mono\ 15
 set splitbelow
 set cursorline
+" Always show tab bar
+set showtabline=2
 
-" Not sure what this does :S
+" Set leader key to ','
+let mapleader=","
+
+" Ctrl-Space omnicompletion
 imap <C-Space> <C-x><C-o>
 
-colorscheme wombat 
-
-" change current dir to file in buffer
-" autocmd BufEnter * cd %:p:h
+colorscheme wombat
+highlight LineNr guibg=grey14
 
 "for omnifunc
 filetype plugin on
 set ofu=syntaxcomplete#Complete
 
 " MAPPINGS
-nmap ,rc :tabe $MYVIMRC<cr>
-nmap ,src :source $MYVIMRC<cr>
-nmap ,swu :OpenSession swu<cr>
-nmap ,t <C-w><C-w>
+nmap <leader>rc :tabe $MYVIMRC<cr>
+nmap <leader>src :source $MYVIMRC<cr>
+nmap <leader>swu :OpenSession swu<cr>
+map <C-a> "gg+yG
 
 " Zencoding expand key
 let g:user_zen_expandabbr = '<C-e>'
@@ -119,7 +123,7 @@ let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'
 let g:session_default_overwrite = 'yes'
 let g:session_default_to_last = 1
-let g:session_autosave_periodic = 1
+let g:session_autosave_periodic = 10
 
 " ctrl-p default new tab behaviour
 let g:ctrlp_prompt_mappings = {
@@ -137,13 +141,43 @@ let g:ctrlp_match_window = 'bottom,order:ttb,min:10,max:10'
 
 " Start gvim maximized
 if has("gui_running")
-  " GUI is running or is about to start.
-  " Maximize gvim window.
-  set lines=999 columns=999
+    " GUI is running or is about to start.
+    " Maximize gvim window.
+    set lines=999 columns=999
 endif
+
+" Switch tabs like Chrome
+nmap <C-Tab> :tabn<CR>
+nmap <C-S-Tab> :tabp<CR>
+nmap <C-n> :tabnew<CR>
+nmap <C-t> :tabnew<CR>
+nmap <C-w><C-w> :q<CR>
+nmap <C-s> :w<CR>
+nnoremap <esc> :noh<return><esc>
+nnoremap <C-c> :noh<return><C-c>
 
 " Linters
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_coffeescript_checkers = ['coffee']
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501'
+
+" Strip trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
+"Use TAB to complete when typing words, else inserts TABs as usual.
+"Uses dictionary and source files to find matching words to complete.
+
+"See help completion for source,
+"Note: usual completion is on <C-n> but more trouble to press all the time.
+"Never type the same word twice and maybe learn a new spellings!
+"Use the Linux dictionary when spelling is in doubt.
+"Window users can copy the file to their machine.
+function! Tab_Or_Complete()
+  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+    return "\<C-N>"
+  else
+    return "\<Tab>"
+  endif
+endfunction
+inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>

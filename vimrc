@@ -86,7 +86,7 @@ let mapleader=","
 " Ctrl-Space omnicompletion
 imap <C-Space> <C-x><C-o>
 
-colorscheme molokai
+colorscheme badwolf
 highlight LineNr guibg=grey14
 
 "for omnifunc

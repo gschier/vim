@@ -42,15 +42,15 @@ set dictionary+=/home/gschier/.vim/dictionary.txt
 
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
-set showcmd		  " Show (partial) command in status line.
+set showcmd		    " Show (partial) command in status line.
 set showmatch		" Show matching brackets.
-set ignorecase	" Do case insensitive matching
+" set ignorecase	" Do case insensitive matching
 set smartcase		" Do smart case matching
-set incsearch		" Incremental search
+" set incsearch		" Incremental search
 set autowrite		" Automatically save before commands like :next and :make
-set hidden      " Hide buffers when they are abandoned
-set mouse=a		  " Enable mouse usage (all modes)
-set laststatus=2
+set hidden          " Hide buffers when they are abandoned
+set mouse=a		    " Enable mouse usage (all modes)
+set laststatus=2    " Show n last commands
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
@@ -86,7 +86,7 @@ let mapleader=","
 " Ctrl-Space omnicompletion
 imap <C-Space> <C-x><C-o>
 
-colorscheme wombat
+colorscheme molokai
 highlight LineNr guibg=grey14
 
 "for omnifunc
@@ -97,10 +97,8 @@ set ofu=syntaxcomplete#Complete
 nmap <leader>rc :tabe $MYVIMRC<cr>
 nmap <leader>src :source $MYVIMRC<cr>
 nmap <leader>swu :OpenSession swu<cr>
+nmap <C-S-f> :Grep<space>
 map <C-a> "gg+yG
-
-" Zencoding expand key
-let g:user_zen_expandabbr = '<C-e>'
 
 " FOR HTML syntax in php files
 au BufRead,BufNewFile *.php set ft=php.html
@@ -124,6 +122,12 @@ let g:session_autoload = 'yes'
 let g:session_default_overwrite = 'yes'
 let g:session_default_to_last = 1
 let g:session_autosave_periodic = 10
+
+" EasyGrep
+let g:EasyGrepRecursive = 1
+let g:EasyGrepIgnoreCase = 0
+let g:EasyGrepEveryMatch = 1
+let g:EasyGrepFilesToExclude = '*.pyc'
 
 " ctrl-p default new tab behaviour
 let g:ctrlp_prompt_mappings = {
@@ -181,3 +185,32 @@ function! Tab_Or_Complete()
   endif
 endfunction
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+
+
+"""""""""""""""""""""
+" Font size changing
+function! EnlargeFont()
+    let l:font=split( &guifont )
+    let l:font[-1] = l:font[-1] + 1
+    let &guifont=join( l:font, ' ' )
+endfunction
+
+function! ShrinkFont()
+    let l:font=split( &guifont )
+    if l:font[-1] > 2
+        let l:font[-1] = l:font[-1] - 1
+        let &guifont=join( l:font, ' ' )
+    endif
+endfunction
+
+function! DefaultFont()
+    let l:font=split( &guifont )
+    if l:font[-1] > 2
+        let l:font[-1] = 14
+        let &guifont=join( l:font, ' ' )
+    endif
+endfunction
+
+nmap <leader>++  :call EnlargeFont()<CR>
+nmap <leader>-- :call ShrinkFont()<CR>
+nmap <leader>00 :call DefaultFont()<CR>

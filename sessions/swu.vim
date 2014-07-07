@@ -1,6 +1,6 @@
 " ~/.vim/sessions/swu.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 07 July 2014 at 11:50:30.
+" Created by session.vim 2.6.1 on 07 July 2014 at 13:26:38.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -13,7 +13,7 @@ if &background != 'dark'
 	set background=dark
 endif
 if !exists('g:colors_name') || g:colors_name != 'badwolf' | colorscheme badwolf | endif
-call setqflist([{'lnum': 0, 'col': 0, 'valid': 1, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'fugitive:///home/gschier/.vim/.git//2a042d5350275661c0c3bb2a8900c993cd7d0b53/vimrc', 'text': 'A bunch of new plugins!'}, {'lnum': 0, 'col': 0, 'valid': 1, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'fugitive:///home/gschier/.vim/.git//c15dfca867281c1fc2a302e642c58dc18938cda4/vimrc', 'text': 'Commenting and better vimrc'}, {'lnum': 0, 'col': 0, 'valid': 1, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'fugitive:///home/gschier/.vim/.git//fa1111bbf106671f437d792aa34712cf5ef45f49/vimrc', 'text': 'Coffeescript and Less support'}, {'lnum': 0, 'col': 0, 'valid': 1, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'fugitive:///home/gschier/.vim/.git//06a7485a53697999680f98d62f78354d7bcc7889/vimrc', 'text': 'Initial'}])
+call setqflist([{'lnum': 0, 'col': 0, 'valid': 1, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'apps/logs/models.py', 'text': 'To git@github.com:sendwithus/sendwithus.git'}, {'lnum': 0, 'col': 0, 'valid': 1, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'apps/logs/models.py', 'text': '   401c2c3..e4226d0  master -> master'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
@@ -25,8 +25,8 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +1 ~/README.md
-badd +333 apps/api/v1/views/send.py
-badd +169 ~/.vim/vimrc
+badd +124 apps/api/v1/views/send.py
+badd +135 ~/.vim/vimrc
 badd +48 apps/4swu/management/commands/cron_swu_report.py
 badd +123 apps/api/ajax.py
 badd +59 apps/editor/templates/editor/text.html
@@ -36,12 +36,16 @@ badd +69 settings/dev/greg.py
 badd +1 README.md
 badd +9 apps/webfront/templates/500.html
 badd +1 ~/.vim/.git/COMMIT_EDITMSG
-badd +144 apps/logs/models.py
-badd +3 Procfile
-badd +1 Procfile_dev
-badd +1 settings/base.py
+badd +145 apps/logs/models.py
+badd +7 Procfile
+badd +3 Procfile_dev
+badd +312 settings/base.py
+badd +30 apps/customers/models.py
+badd +1 ~/Desktop/test.js
+badd +9 ~/Workspace/random/mattermark_drips.py
+badd +0 static/src/js/api/sidebar.js
 silent! argdel *
-edit apps/api/v1/views/send.py
+edit apps/logs/models.py
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -56,13 +60,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 124 - ((18 * winheight(0) + 33) / 67)
+let s:l = 150 - ((37 * winheight(0) + 32) / 65)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-124
-normal! 011|
-tabedit apps/logs/models.py
+150
+normal! 020|
+tabedit ~/Desktop/test.js
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -77,54 +81,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 144 - ((21 * winheight(0) + 33) / 67)
+let s:l = 55 - ((54 * winheight(0) + 32) / 65)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-144
-normal! 0
-tabedit Procfile_dev
-set splitbelow splitright
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-" argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 3 - ((0 * winheight(0) + 33) / 67)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-3
-normal! 029|
-tabedit settings/base.py
-set splitbelow splitright
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-" argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 312 - ((46 * winheight(0) + 33) / 67)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-312
-normal! 014|
+55
+normal! 016|
 tabedit ~/.vim/vimrc
 set splitbelow splitright
 set nosplitright
@@ -140,13 +102,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 171 - ((33 * winheight(0) + 33) / 67)
+let s:l = 227 - ((44 * winheight(0) + 32) / 65)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-171
-normal! 033|
-tabnext 5
+227
+normal! 030|
+tabnext 3
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -163,7 +125,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 1wincmd w
-tabnext 5
+tabnext 3
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

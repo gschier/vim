@@ -142,7 +142,7 @@ let g:ctrlp_max_files = 0
 let g:ctrlp_by_filename = 0
 let g:ctrlp_regexp = 1
 
-let g:ctrlp_match_window = 'bottom,order:ttb,min:10,max:10'
+let g:ctrlp_match_window = 'top,order:ttb,min:10,max:10'
 
 
 " Start gvim maximized
@@ -174,6 +174,7 @@ let g:bufferline_echo = 0
 " Linters
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_coffeescript_checkers = ['coffee']
+
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501'
 
@@ -225,3 +226,7 @@ endfunction
 nmap <leader>++  :call EnlargeFont()<CR>
 nmap <leader>-- :call ShrinkFont()<CR>
 nmap <leader>00 :call DefaultFont()<CR>
+
+" Some helpful run commands
+command Nrun execute '!node %'
+command Pyrun execute '!python %'

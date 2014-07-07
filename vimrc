@@ -60,6 +60,8 @@ set number
 set nowrap
 set autoindent
 set smartindent
+set ignorecase
+set smartcase
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -74,7 +76,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 set wildmode=list:longest
-set guifont=Ubuntu\ Mono\ 15
+set guifont=Ubuntu\ Mono\ 14
 set splitbelow
 set cursorline
 " Always show tab bar
@@ -159,6 +161,15 @@ nmap <C-w><C-w> :q<CR>
 nmap <C-s> :w<CR>
 nnoremap <esc> :noh<return><esc>
 nnoremap <C-c> :noh<return><C-c>
+
+" Airline
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\u00a0"
+let g:airline_symbols.branch = "→ "
+let g:bufferline_echo = 0
 
 " Linters
 let g:syntastic_javascript_checkers = ['jshint']

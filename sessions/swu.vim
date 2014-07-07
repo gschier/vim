@@ -1,10 +1,10 @@
 " ~/.vim/sessions/swu.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 07 July 2014 at 02:20:34.
+" Created by session.vim 2.6.1 on 07 July 2014 at 11:50:30.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 15
+silent! set guifont=Ubuntu\ Mono\ 14
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -26,7 +26,7 @@ endif
 set shortmess=aoO
 badd +1 ~/README.md
 badd +333 apps/api/v1/views/send.py
-badd +159 ~/.vim/vimrc
+badd +169 ~/.vim/vimrc
 badd +48 apps/4swu/management/commands/cron_swu_report.py
 badd +123 apps/api/ajax.py
 badd +59 apps/editor/templates/editor/text.html
@@ -34,8 +34,12 @@ badd +48 fab/api.py
 badd +41 settings/aws/base.py
 badd +69 settings/dev/greg.py
 badd +1 README.md
-badd +12 apps/webfront/templates/500.html
+badd +9 apps/webfront/templates/500.html
 badd +1 ~/.vim/.git/COMMIT_EDITMSG
+badd +144 apps/logs/models.py
+badd +3 Procfile
+badd +1 Procfile_dev
+badd +1 settings/base.py
 silent! argdel *
 edit apps/api/v1/views/send.py
 set splitbelow splitright
@@ -52,13 +56,97 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 124 - ((20 * winheight(0) + 23) / 46)
+let s:l = 124 - ((18 * winheight(0) + 33) / 67)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 124
 normal! 011|
-tabnext 1
+tabedit apps/logs/models.py
+set splitbelow splitright
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+" argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 144 - ((21 * winheight(0) + 33) / 67)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+144
+normal! 0
+tabedit Procfile_dev
+set splitbelow splitright
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+" argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 3 - ((0 * winheight(0) + 33) / 67)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+3
+normal! 029|
+tabedit settings/base.py
+set splitbelow splitright
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+" argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 312 - ((46 * winheight(0) + 33) / 67)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+312
+normal! 014|
+tabedit ~/.vim/vimrc
+set splitbelow splitright
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+" argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 171 - ((33 * winheight(0) + 33) / 67)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+171
+normal! 033|
+tabnext 5
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -75,7 +163,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 1wincmd w
-tabnext 1
+tabnext 5
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

@@ -1,6 +1,6 @@
 " ~/.vim/sessions/swu.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 07 July 2014 at 15:56:25.
+" Created by session.vim 2.6.1 on 08 July 2014 at 14:05:46.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -12,8 +12,8 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'badwolf' | colorscheme badwolf | endif
-call setqflist([{'lnum': 0, 'col': 0, 'valid': 1, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'apps/logs/models.py', 'text': 'To git@github.com:gschier/vim.git'}, {'lnum': 0, 'col': 0, 'valid': 1, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'apps/logs/models.py', 'text': '   7613e44..bf8f365  master -> master'}])
+if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
+call setqflist([{'lnum': 2003, 'col': 9, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/api/v1/tests.py', 'text': '        DSendLogEvent('}, {'lnum': 2012, 'col': 9, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/api/v1/tests.py', 'text': '        DSendLogEvent('}, {'lnum': 2021, 'col': 9, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/api/v1/tests.py', 'text': '        DSendLogEvent('}, {'lnum': 2030, 'col': 9, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/api/v1/tests.py', 'text': '        DSendLogEvent('}, {'lnum': 354, 'col': 39, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/logs/models.py', 'text': '                self.__latest_event = DSendLogEvent('}, {'lnum': 589, 'col': 7, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/logs/models.py', 'text': 'class DSendLogEvent(DynamoModel):'}, {'lnum': 86, 'col': 21, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/logs/workers.py', 'text': '                    DSendLogEvent('}, {'lnum': 109, 'col': 13, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/logs/workers.py', 'text': '            DSendLogEvent('}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
@@ -24,24 +24,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 apps/esp/sg/client.py
+badd +1 apps/logs/models.py
+badd +48 settings/dev/greg.py
+badd +10 apps/api/management/commands/cron_retry_failed_sends.py
+badd +105 apps/webutil/dynamo.py
+badd +57 ~/.vim/vimrc
 silent! argdel *
-set splitbelow splitright
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-" argglobal
-enew
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-lcd ~/Workspace/sendwithus
-tabedit ~/Workspace/sendwithus/apps/esp/sg/client.py
+edit apps/logs/models.py
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -56,14 +45,36 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 2 - ((1 * winheight(0) + 33) / 67)
+let s:l = 609 - ((34 * winheight(0) + 33) / 67)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-2
+609
 normal! 0
 lcd ~/Workspace/sendwithus
-tabnext 2
+tabedit ~/.vim/vimrc
+set splitbelow splitright
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+" argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 85 - ((61 * winheight(0) + 33) / 67)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+85
+normal! 019|
+lcd ~/Workspace/sendwithus
+tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -80,7 +91,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 1wincmd w
-tabnext 2
+tabnext 1
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

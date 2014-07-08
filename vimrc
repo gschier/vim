@@ -54,7 +54,6 @@ endif
 set number
 set nowrap
 set autoindent
-set smartindent
 set ignorecase
 set smartcase
 set tabstop=4
@@ -83,7 +82,8 @@ let mapleader=","
 " Ctrl-Space omnicompletion
 imap <C-Space> <C-x><C-o>
 
-colorscheme badwolf
+colorscheme molokai
+highlight Comment cterm=bold
 highlight LineNr guibg=grey14
 
 "for omnifunc
@@ -148,12 +148,12 @@ if has("gui_running")
 endif
 
 " Switch tabs like Chrome
-nmap <C-Tab> :tabn<CR>
-nmap <C-S-Tab> :tabp<CR>
-nmap <C-n> :tabnew<CR>
-nmap <C-t> :tabnew<CR>
-nmap <C-w><C-w> :q<CR>
-nmap <C-s> :w<CR>
+" nmap <C-Tab> :tabn<CR>
+" nmap <C-S-Tab> :tabp<CR>
+" nmap <C-n> :tabnew<CR>
+" nmap <C-t> :tabnew<CR>
+" nmap <C-w><C-w> :q<CR>
+" nmap <C-s> :w<CR>
 nnoremap <esc> :noh<return><esc>
 nnoremap <C-c> :noh<return><C-c>
 

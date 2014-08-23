@@ -1,10 +1,10 @@
-" ~/.vim/sessions/default.vim:
+" ~/.vim/sessions/forkjoy.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 09 July 2014 at 23:28:02.
+" Created by session.vim 2.6.1 on 21 July 2014 at 23:59:22.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 16
+silent! set guifont=Ubuntu\ Mono\ 15
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -12,25 +12,30 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'wombat' | colorscheme wombat | endif
-call setqflist([])
+if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
+call setqflist([{'lnum': 5072, 'col': 16, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'static/src/lib/metronic/style.css', 'text': '.social-icons .spotify {background: url(../img/social/spotify.png) no-repeat;}'}, {'lnum': 5072, 'col': 55, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'static/src/lib/metronic/style.css', 'text': '.social-icons .spotify {background: url(../img/social/spotify.png) no-repeat;}'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Workspace/sendwithus
+cd ~/Workspace/forkjoy
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +228 api/models/Model.js
+badd +100 README.md
+badd +37 api/models/Address.js
+badd +78 api/models/Restaurant.js
+badd +100 api/controllers/restaurants.js
 silent! argdel *
+edit README.md
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 " argglobal
-enew
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -39,6 +44,13 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
+silent! normal! zE
+let s:l = 110 - ((46 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+110
+normal! 058|
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

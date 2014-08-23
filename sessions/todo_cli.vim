@@ -1,10 +1,10 @@
-" ~/.vim/sessions/default.vim:
+" ~/.vim/sessions/todo_cli.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 09 July 2014 at 23:28:02.
+" Created by session.vim 2.6.1 on 28 July 2014 at 11:26:15.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 16
+silent! set guifont=Ubuntu\ Mono\ 14
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -12,33 +12,59 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'wombat' | colorscheme wombat | endif
-call setqflist([])
+if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
+call setqflist([{'lnum': 5, 'col': 67, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'lib/npm-debug.log', 'text': '4 error Error: ENOENT, open ''/home/gschier/Workspace/todo/cli/lib/package.json'''}, {'lnum': 14, 'col': 52, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'lib/npm-debug.log', 'text': '11 error path /home/gschier/Workspace/todo/cli/lib/package.json'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Workspace/sendwithus
+cd ~/Workspace/todo/cli
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +209 lib/components/Todo.js
+badd +59 lib/app.js
+badd +32 form.js
 silent! argdel *
+edit lib/components/Todo.js
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 " argglobal
-enew
-setlocal fdm=manual
+setlocal fdm=syntax
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=0
+setlocal fdl=4
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
+21
+silent! normal! zo
+25
+silent! normal! zo
+41
+silent! normal! zo
+96
+silent! normal! zo
+110
+silent! normal! zo
+41
+silent! normal! zo
+96
+silent! normal! zo
+110
+silent! normal! zo
+let s:l = 103 - ((50 * winheight(0) + 34) / 68)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+103
+normal! 016|
+lcd ~/Workspace/todo/cli
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

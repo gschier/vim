@@ -1,10 +1,10 @@
-" ~/.vim/sessions/default.vim:
+" ~/.vim/sessions/swu_node.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 09 July 2014 at 23:28:02.
+" Created by session.vim 2.6.1 on 23 July 2014 at 13:23:16.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 16
+silent! set guifont=Ubuntu\ Mono\ 15
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -12,14 +12,14 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'wombat' | colorscheme wombat | endif
-call setqflist([])
+if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
+call setqflist([{'lnum': 137, 'col': 26, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'test/sendwithus.js', 'text': '		this.sendwithus.customersCreate(this.customerData, function(err, data) {'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Workspace/sendwithus
+cd ~/Workspace/sendwithus_nodejs
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif

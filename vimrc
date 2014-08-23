@@ -40,7 +40,7 @@ set showcmd		    " Show (partial) command in status line.
 set showmatch		" Show matching brackets.
 " set ignorecase	" Do case insensitive matching
 set smartcase		" Do smart case matching
-" set incsearch		" Incremental search
+set incsearch		" Incremental search
 set autowrite		" Automatically save before commands like :next and :make
 set hidden          " Hide buffers when they are abandoned
 set mouse=a		    " Enable mouse usage (all modes)
@@ -61,20 +61,20 @@ set softtabstop=4
 set shiftwidth=4
 set guioptions-=T
 set expandtab
-set hlsearch
+" set hlsearch
 set backspace=indent,eol,start
 set nostartofline
 set ruler
 set cmdheight=1
 set nobackup
+set colorcolumn=100
 set nowritebackup
 set noswapfile
 set wildmode=list:longest
 set guifont=Ubuntu\ Mono\ 14
 set splitbelow
 set cursorline
-" Always show tab bar
-set showtabline=2
+set showtabline=1
 
 " Set leader key to ','
 let mapleader=","
@@ -91,18 +91,11 @@ filetype plugin on
 set ofu=syntaxcomplete#Complete
 
 " MAPPINGS
-nmap <leader>rc :tabe $MYVIMRC<cr>
-nmap <leader>src :source $MYVIMRC<cr>
-nmap <leader>swu :OpenSession swu<cr>
+nmap <leader>rc :e $MYVIMRC<cr>
 nmap <C-S-f> :Grep<space>
-map <C-a> "gg+yG
 
 " FOR HTML syntax in php files
 au BufRead,BufNewFile *.php set ft=php.html
-
-" Remap 'q' to close buffer instead
-" cnoreabbrev wq w<bar>bd
-" cnoreabbrev q bd
 
 " Colemak bindings
 source ~/.vim/colemak.vim
@@ -126,18 +119,14 @@ let g:EasyGrepIgnoreCase = 0
 let g:EasyGrepEveryMatch = 1
 let g:EasyGrepFilesToExclude = '*.pyc'
 
-" ctrl-p default new tab behaviour
-let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<c-t>'],
-    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>']
-    \ }
+let g:ctrlp_map = '<C-p>'
 let g:ctrlp_max_depth = 100
 let g:ctrlp_max_files = 0
 
 let g:ctrlp_by_filename = 0
 let g:ctrlp_regexp = 1
 
-let g:ctrlp_match_window = 'top,order:ttb,min:10,max:10'
+let g:ctrlp_match_window = 'top,order:ttb,min:15,max:15'
 
 
 " Start gvim maximized
@@ -147,18 +136,13 @@ if has("gui_running")
     set lines=999 columns=999
 endif
 
-" Switch tabs like Chrome
-" nmap <C-Tab> :tabn<CR>
-" nmap <C-S-Tab> :tabp<CR>
-" nmap <C-n> :tabnew<CR>
-" nmap <C-t> :tabnew<CR>
-" nmap <C-w><C-w> :q<CR>
-" nmap <C-s> :w<CR>
-nnoremap <esc> :noh<return><esc>
-nnoremap <C-c> :noh<return><C-c>
+" Switch buffers like chrome
+map <C-Tab> :bnext<cr>
+map <C-S-Tab> :bprevious<cr>
+map <silent> <C-w><C-w> :bd<cr>
 
-" Git Gutter
-let g:gitgutter_sign_column_always = 1
+" Bufexplorer
+let g:bufExplorerDisableDefaultKeyMapping = 1
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -166,36 +150,32 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\u00a0"
-let g:airline_symbols.branch = "→ "
+let g:airline_symbols.branch = "☻ "
+
+" Bufferline
 let g:bufferline_echo = 0
+" let g:bufferline_fname_mod = ':~:.'
+let g:bufferline_fname_mod = ':t'
 
 " Linters
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_coffeescript_checkers = ['coffee']
-
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args='--ignore=E501'
+let g:syntastic_python_flake8_args = '--ignore=E501'
+
+" Supertab
+let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabLongestHighlight = 1
+
+" " Jedi
+" let g:jedi#popup_on_dot = 0
+" let g:jedi#use_tabs_not_buffers = 0
 
 " Strip trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
-"Use TAB to complete when typing words, else inserts TABs as usual.
-"Uses dictionary and source files to find matching words to complete.
-
-"See help completion for source,
-"Note: usual completion is on <C-n> but more trouble to press all the time.
-"Never type the same word twice and maybe learn a new spellings!
-"Use the Linux dictionary when spelling is in doubt.
-"Window users can copy the file to their machine.
-function! Tab_Or_Complete()
-  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-    return "\<C-N>"
-  else
-    return "\<Tab>"
-  endif
-endfunction
-inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-
+" JSON Formatter
+com! FormatJSON %!python -m json.tool
 
 """""""""""""""""""""
 " Font size changing
@@ -221,10 +201,8 @@ function! DefaultFont()
     endif
 endfunction
 
-nmap <leader>++  :call EnlargeFont()<CR>
-nmap <leader>-- :call ShrinkFont()<CR>
-nmap <leader>00 :call DefaultFont()<CR>
+nmap ++  :call EnlargeFont()<CR>
+nmap -- :call ShrinkFont()<CR>
+nmap 00 :call DefaultFont()<CR>
 
-" Some helpful run commands
-command Nrun execute '!node %'
-command Pyrun execute '!python %'
+autocmd BufRead *.csv,*.tsv syntax off

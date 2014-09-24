@@ -1,10 +1,10 @@
-" ~/.vim/sessions/swu_node.vim:
+" ~/.vim/sessions/startup_slam.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 29 August 2014 at 12:17:45.
+" Created by session.vim 2.6.1 on 23 September 2014 at 12:27:16.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 15
+silent! set guifont=Ubuntu\ Mono\ 14
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -13,46 +13,43 @@ if &background != 'dark'
 	set background=dark
 endif
 if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
-call setqflist([{'lnum': 137, 'col': 26, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'test/sendwithus.js', 'text': '		this.sendwithus.customersCreate(this.customerData, function(err, data) {'}])
+call setqflist([{'lnum': 501, 'col': 47, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/api/v1/tests.py', 'text': '        self.assertEquals(events[0].message, ''APIv1 send request'')'}, {'lnum': 372, 'col': 15, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/api/v1/views/send.py', 'text': '            u''APIv1.send: profile_id=%s, user_layout_id=%s, recipient=%s, receipt_id=%s'','}, {'lnum': 385, 'col': 28, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/api/v1/views/send.py', 'text': '            event_message=''APIv1 send request'','}, {'lnum': 396, 'col': 44, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/api/v1/views/send.py', 'text': '            logger.error(''Failed to handle APIv1.send! profile=%s, mongo_id[%s], exception=%s'' % ('}, {'lnum': 400, 'col': 18, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/api/v1/views/send.py', 'text': '                "APIv1.send shit gone wrong. Way wrong. Nick wrong. Wrong.")'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Workspace/sendwithus_nodejs
+cd ~/Workspace/startup_slam
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +227 lib/sendwithus.js
-badd +0 test/sendwithus.js
+badd +50 static/index.html
+badd +21 README.md
+badd +6 package.json
+badd +1 tutorials/4_theme/static/css/style.css
 silent! argdel *
-edit test/sendwithus.js
+edit tutorials/4_theme/static/css/style.css
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 " argglobal
-setlocal fdm=syntax
+setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=4
+setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-10
-silent! normal! zo
-89
-silent! normal! zo
-109
-silent! normal! zo
-let s:l = 121 - ((30 * winheight(0) + 32) / 65)
+silent! normal! zE
+let s:l = 814 - ((0 * winheight(0) + 34) / 68)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-121
-normal! 024|
+814
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

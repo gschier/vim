@@ -139,7 +139,7 @@ endif
 " Switch buffers like chrome
 map <C-Tab> :bnext<cr>
 map <C-S-Tab> :bprevious<cr>
-map <silent> <C-w><C-w> :bd<cr>
+" map <silent> <C-w><C-w> :bd<cr>
 
 " Bufexplorer
 let g:bufExplorerDisableDefaultKeyMapping = 1

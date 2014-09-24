@@ -1,6 +1,6 @@
 " ~/.vim/sessions/swu_track.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 14 July 2014 at 23:07:41.
+" Created by session.vim 2.6.1 on 15 September 2014 at 17:34:11.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -13,7 +13,7 @@ if &background != 'dark'
 	set background=dark
 endif
 if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
-call setqflist([{'lnum': 14, 'col': 1, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/apps/deploy/management/commands/deploy_static.py', 'text': 'AWS_ACCESS_KEY_ID = ''AKIAIFTH26PFFKH7XU7Q'''}, {'lnum': 64, 'col': 32, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/apps/deploy/management/commands/deploy_static.py', 'text': '        conn = boto.connect_s3(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY)'}, {'lnum': 79, 'col': 1, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/settings/aws/base.py', 'text': 'AWS_ACCESS_KEY_ID = ''AKIAIFTH26PFFKH7XU7Q'''}, {'lnum': 43, 'col': 3, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/settings/dev/curtis.py', 'text': '# AWS_ACCESS_KEY_ID = ''AKIAIFTH26PFFKH7XU7Q'''}, {'lnum': 32, 'col': 3, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/settings/dev/matt.py', 'text': '# AWS_ACCESS_KEY_ID = ''AKIAIFTH26PFFKH7XU7Q'''}, {'lnum': 54, 'col': 44, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/settings/dynamo.py', 'text': '                aws_access_key_id=settings.AWS_ACCESS_KEY,'}, {'lnum': 20, 'col': 1, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/settings/heroku/production.py', 'text': 'AWS_ACCESS_KEY_ID = ''AKIAIFTH26PFFKH7XU7Q'''}, {'lnum': 38, 'col': 1, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/settings/heroku/production.py', 'text': 'AWS_ACCESS_KEY = ''AKIAIPJMI6QOVUOCVEGQ'''}, {'lnum': 15, 'col': 1, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/settings/heroku/staging.py', 'text': 'AWS_ACCESS_KEY_ID = ''AKIAIFTH26PFFKH7XU7Q'''}, {'lnum': 36, 'col': 1, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/settings/heroku/staging.py', 'text': 'AWS_ACCESS_KEY = ''AKIAIPJMI6QOVUOCVEGQ'''}, {'lnum': 20, 'col': 40, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/settings/sqs.py', 'text': '            aws_access_key_id=settings.AWS_ACCESS_KEY,'}])
+call setqflist([{'lnum': 35, 'col': 39, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/logs/models.py', 'text': '        (EVENT_TYPE_FAILED_TO_QUEUE, ''Failed to Queue''),'}, {'lnum': 36, 'col': 38, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/logs/models.py', 'text': '        (EVENT_TYPE_FAILED_TO_SEND, ''Failed to Send''),'}, {'lnum': 18, 'col': 27, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/track/management/commands/initialize_relay_queues.py', 'text': '            logger.error(''Failed to initialize relay queues: %s'' % str(e))'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
@@ -24,9 +24,10 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +25 requirements.txt
+badd +1 apps/track/workers.py
+badd +0 apps/track/views.py
 silent! argdel *
-edit requirements.txt
+edit apps/track/views.py
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -41,12 +42,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 25 - ((24 * winheight(0) + 32) / 65)
+let s:l = 90 - ((32 * winheight(0) + 32) / 65)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-25
-normal! 015|
+90
+normal! 042|
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

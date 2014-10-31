@@ -6,7 +6,7 @@
 let s:save_cpo = &cpo
 set cpo&vim
 
-let s:filtermx = '|\(\%(bem\|html\|haml\|slim\|e\|c\|fc\|xsl\|t\|\/[^ ]\+\)\s*,\{0,1}\s*\)*$'
+let s:filtermx = '|\(\%(bem\|html\|haml\|slim\|e\|c\|s\|fc\|xsl\|t\|\/[^ ]\+\)\s*,\{0,1}\s*\)*$'
 
 function! emmet#getExpandos(type, key)
   let expandos = emmet#getResource(a:type, 'expandos', {})
@@ -640,7 +640,12 @@ function! emmet#expandAbbr(mode, abbr) range
         let indent = ''
       endif
       let expand = substitute(expand, '\n\s*$', '', 'g')
-      let expand = line[:-len(part)-1] . substitute(expand, "\n", "\n" . indent, 'g') . rest
+      if emmet#useFilter(filters, 's')
+        let epart = substitute(expand, "\n\s\*", "", 'g')
+      else
+        let epart = substitute(expand, "\n", "\n" . indent, 'g')
+      endif
+      let expand = line[:-len(part)-1] . epart . rest
       let lines = split(expand, "\n", 1)
       if a:mode == 2
         silent! exe "normal! gvc"
@@ -855,6 +860,9 @@ function! emmet#expandWord(abbr, type, orig)
     let expand = substitute(expand, '<', '\&lt;', 'g')
     let expand = substitute(expand, '>', '\&gt;', 'g')
   endif
+  if emmet#useFilter(filters, 's')
+    let expand = substitute(expand, "\n\s\*", "", 'g')
+  endif
   if a:orig == 0
     let expand = emmet#expandDollarExpr(expand)
     let expand = substitute(expand, '\${cursor}', '', 'g')
@@ -926,7 +934,7 @@ let s:emmet_settings = {
 \            'l:a': 'left:auto;',
 \            'z': 'z-index:|;',
 \            'z:a': 'z-index:auto;',
-\            'fl': 'float:|;',
+\            'fl': 'float:left;',
 \            'fl:n': 'float:none;',
 \            'fl:l': 'float:left;',
 \            'fl:r': 'float:right;',
@@ -1671,6 +1679,7 @@ let s:emmet_settings = {
 \                    ."\t%body\n"
 \                    ."\t\t${child}|\n",
 \        },
+\        'attribute_style': 'hash',
 \    },
 \    'slim': {
 \        'indentation': '  ',

@@ -46,6 +46,11 @@ set hidden          " Hide buffers when they are abandoned
 set mouse=a		    " Enable mouse usage (all modes)
 set laststatus=2    " Show n last commands
 
+" Filetype stuff
+au BufNewFile,BufRead *.md  setf markdown
+autocmd Filetype html setlocal spell spelllang=en_us
+autocmd Filetype markdown setlocal spell spelllang=en_us
+
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
@@ -82,7 +87,7 @@ let mapleader=","
 " Ctrl-Space omnicompletion
 imap <C-Space> <C-x><C-o>
 
-colorscheme molokai
+colorscheme badwolf
 highlight Comment cterm=bold
 highlight LineNr guibg=grey14
 
@@ -150,12 +155,33 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\u00a0"
-let g:airline_symbols.branch = "☻ "
+let g:airline_symbols.branch = ""
+let g:airline#extensions#branch#enabled = 1
+" let g:airline#extensions#branch#displayed_head_limit = 10
+let g:airline#extensions#ctrlp#show_adjacent_modes = 1
+let g:airline#extensions#hunks#enabled = 0
+let g:airline_section_x = ""
+let g:airline_section_y = ""
+let g:airline_mode_map = {
+      \ '__' : '-',
+      \ 'n'  : 'N',
+      \ 'i'  : 'I',
+      \ 'R'  : 'R',
+      \ 'c'  : 'C',
+      \ 'v'  : 'V',
+      \ 'V'  : 'V',
+      \ '' : 'V',
+      \ 's'  : 'S',
+      \ 'S'  : 'S',
+      \ '' : 'S',
+      \ }
 
 " Bufferline
 let g:bufferline_echo = 0
-" let g:bufferline_fname_mod = ':~:.'
 let g:bufferline_fname_mod = ':t'
+
+" Git Gutter
+let g:gitgutter_sign_column_always = 1
 
 " Linters
 let g:syntastic_javascript_checkers = ['jshint']
@@ -167,9 +193,17 @@ let g:syntastic_python_flake8_args = '--ignore=E501'
 let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:SuperTabLongestHighlight = 1
 
-" " Jedi
-" let g:jedi#popup_on_dot = 0
-" let g:jedi#use_tabs_not_buffers = 0
+" Jedi
+let g:jedi#popup_on_dot = 0
+let g:jedi#use_tabs_not_buffers = 0
+
+" Gist
+let g:gist_open_browser_after_post = 1
+let g:gist_show_privates = 1
+let g:gist_post_private = 1
+
+" Bookmarks
+let g:bookmark_sign = '♥'
 
 " Strip trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e

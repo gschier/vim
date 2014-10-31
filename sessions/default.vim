@@ -1,6 +1,6 @@
 " ~/.vim/sessions/default.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 09 July 2014 at 23:28:02.
+" Created by session.vim 2.6.1 on 23 September 2014 at 23:32:12.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt

@@ -1,3 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/home/gschier/Workspace/sendwithus/apps/deploy/management/commands'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/gschier/Workspace/sendwithus/apps/integrations/migrations'
+let g:netrw_dirhist_2='/home/gschier/Workspace/sendwithus/static'
+let g:netrw_dirhist_3='/home/gschier/Workspace/sendwithus/static/dist'
+let g:netrw_dirhist_4='/home/gschier/Workspace/sendwithus/static/dist/js'
+let g:netrw_dirhist_5='/home/gschier/Workspace/sendwithus/static/dist/js/lib'
+let g:netrw_dirhist_6='/home/gschier/Workspace/sendwithus/static'

@@ -1,6 +1,6 @@
-" ~/.vim/sessions/swu.vim:
+" ~/.vim/sessions/swu_segio.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 11 November 2014 at 19:48:16.
+" Created by session.vim 2.6.1 on 11 November 2014 at 14:58:33.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -12,41 +12,56 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'badwolf' | colorscheme badwolf | endif
-call setqflist([{'lnum': 29, 'col': 52, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/integrations/segio/ajax.py', 'text': '        return super(SegioEnvironmentRestAPI, self)._post(data=data)'}])
+if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
+call setqflist([{'lnum': 35, 'col': 39, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/apps/logs/models.py', 'text': '        (EVENT_TYPE_FAILED_TO_QUEUE, ''Failed to Queue''),'}, {'lnum': 36, 'col': 38, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/apps/logs/models.py', 'text': '        (EVENT_TYPE_FAILED_TO_SEND, ''Failed to Send''),'}, {'lnum': 18, 'col': 27, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/track/management/commands/initialize_relay_queues.py', 'text': '            logger.error(''Failed to initialize relay queues: %s'' % str(e))'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Workspace/sendwithus
+cd ~/Workspace/segio/integrations/lib/sendwithus
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +31 apps/integrations/segio/ajax.py
+badd +19 lib/index.js
+badd +13 test/index.js
 silent! argdel *
-edit apps/integrations/segio/ajax.py
+edit test/index.js
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 " argglobal
-setlocal fdm=manual
+setlocal fdm=syntax
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=0
+setlocal fdl=4
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-silent! normal! zE
-let s:l = 31 - ((23 * winheight(0) + 24) / 48)
+5
+silent! normal! zo
+31
+silent! normal! zo
+47
+silent! normal! zo
+48
+silent! normal! zo
+54
+silent! normal! zo
+61
+silent! normal! zo
+82
+silent! normal! zo
+let s:l = 15 - ((14 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-31
-normal! 09|
+15
+normal! 051|
+lcd ~/Workspace/segio/integrations/lib/sendwithus
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

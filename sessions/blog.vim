@@ -1,6 +1,6 @@
 " ~/.vim/sessions/blog.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 28 October 2014 at 10:08:12.
+" Created by session.vim 2.6.1 on 03 November 2014 at 00:49:49.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -24,12 +24,15 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +233 content/blog/2014/10/23/Creating\ a\ Pure\ CSS\ Dropdown\ Using\ the\ :hover\ Selector.md
-badd +6 ~/Desktop/dropdown.html
-badd +116 static/styles/main.css
-badd +161 templates/layout.html
+badd +279 static/styles/main.css
+badd +192 templates/layout.html
+badd +23 content/index.html
+badd +1 static/styles/bootstrap.css
+badd +1 static/styles/bootstrap.min.css
+badd +72 config.json
+badd +14 content/blog/index.html
 silent! argdel *
-edit content/blog/2014/10/23/Creating\ a\ Pure\ CSS\ Dropdown\ Using\ the\ :hover\ Selector.md
+edit templates/layout.html
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -44,12 +47,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 226 - ((46 * winheight(0) + 34) / 68)
+let s:l = 82 - ((24 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-226
-normal! 083|
+82
+normal! 024|
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

@@ -1,6 +1,6 @@
 " ~/.vim/sessions/swu_vagrant.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 29 September 2014 at 18:42:52.
+" Created by session.vim 2.6.1 on 10 November 2014 at 14:03:55.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -27,11 +27,10 @@ set shortmess=aoO
 badd +22 Vagrantfile
 badd +32 install_sudo.sh
 badd +10 install_virtualenv.sh
-badd +13 install_dynamodb.sh
 badd +11 install_final_setup.sh
 badd +3 install_bashrc.sh
 silent! argdel *
-edit install_dynamodb.sh
+edit install_final_setup.sh
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -46,12 +45,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 17 - ((12 * winheight(0) + 25) / 50)
+let s:l = 11 - ((10 * winheight(0) + 34) / 68)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-17
-normal! 02|
+11
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

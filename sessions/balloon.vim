@@ -1,6 +1,6 @@
 " ~/.vim/sessions/balloon.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 28 October 2014 at 07:27:59.
+" Created by session.vim 2.6.1 on 02 November 2014 at 20:43:56.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -12,7 +12,7 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
+if !exists('g:colors_name') || g:colors_name != 'badwolf' | colorscheme badwolf | endif
 call setqflist([{'lnum': 108, 'col': 9, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'lib/app.js', 'text': '    var layoutPath = pathHelper.join(templatesPath, ''layout.html'');'}, {'lnum': 108, 'col': 54, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'lib/app.js', 'text': '    var layoutPath = pathHelper.join(templatesPath, ''layout.html'');'}, {'lnum': 165, 'col': 24, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'lib/app.js', 'text': '            renderPage(layoutPath, p, ctx, function (err, html) {'}, {'lnum': 331, 'col': 22, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'lib/app.js', 'text': 'function renderPage (layoutPath, pagePath, context, callback) {'}, {'lnum': 340, 'col': 45, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'lib/app.js', 'text': '            var html = swig.render(readFile(layoutPath), { locals: context });'}, {'lnum': 344, 'col': 45, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'lib/app.js', 'text': '        callback(null, swig.render(readFile(layoutPath), { locals: context }));'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
@@ -43,6 +43,8 @@ setlocal fdn=20
 setlocal fen
 55
 silent! normal! zo
+67
+silent! normal! zo
 77
 silent! normal! zo
 95
@@ -51,34 +53,68 @@ silent! normal! zo
 silent! normal! zo
 164
 silent! normal! zo
-189
+194
 silent! normal! zo
-233
+238
 silent! normal! zo
-275
+323
 silent! normal! zo
-318
+336
 silent! normal! zo
-331
+353
 silent! normal! zo
-348
+356
 silent! normal! zo
-351
+77
 silent! normal! zo
-318
+95
 silent! normal! zo
-331
+112
 silent! normal! zo
-348
+164
 silent! normal! zo
-351
+196
 silent! normal! zo
-let s:l = 25 - ((24 * winheight(0) + 24) / 48)
+240
+silent! normal! zo
+325
+silent! normal! zo
+338
+silent! normal! zo
+355
+silent! normal! zo
+358
+silent! normal! zo
+196
+silent! normal! zo
+240
+silent! normal! zo
+325
+silent! normal! zo
+338
+silent! normal! zo
+355
+silent! normal! zo
+358
+silent! normal! zo
+196
+silent! normal! zo
+240
+silent! normal! zo
+325
+silent! normal! zo
+338
+silent! normal! zo
+355
+silent! normal! zo
+358
+silent! normal! zo
+let s:l = 166 - ((12 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-25
-normal! 0
+166
+normal! 022|
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

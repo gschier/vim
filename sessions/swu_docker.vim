@@ -1,6 +1,6 @@
-" ~/.vim/sessions/rester.vim:
+" ~/.vim/sessions/swu_docker.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 10 November 2014 at 23:24:01.
+" Created by session.vim 2.6.1 on 07 November 2014 at 07:40:20.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -19,36 +19,35 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Workspace/rester
+cd ~/Workspace/sendwithus_docker
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +278 static/js/src/app.jsx
-badd +117 static/js/storage.js
-badd +14 manifest.json
-badd +74 static/js/src/header.jsx
+badd +27 Dockerfile
+badd +30 ../sendwithus_vagrant/install_sudo.sh
 silent! argdel *
-edit manifest.json
+edit Dockerfile
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 " argglobal
-setlocal fdm=syntax
+setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=4
+setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 4 - ((3 * winheight(0) + 21) / 43)
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-4
-normal! 021|
+1
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

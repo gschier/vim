@@ -84,6 +84,8 @@ set showtabline=1
 " Set leader key to ','
 let mapleader=","
 
+let $GOPATH = '/home/gschier/Workspace/go'
+
 " Ctrl-Space omnicompletion
 imap <C-Space> <C-x><C-o>
 
@@ -98,6 +100,7 @@ set ofu=syntaxcomplete#Complete
 " MAPPINGS
 nmap <leader>rc :e $MYVIMRC<cr>
 nmap <C-S-f> :Grep<space>
+nmap <C-S-s> :OpenSession<space>
 
 " FOR HTML syntax in php files
 au BufRead,BufNewFile *.php set ft=php.html
@@ -156,9 +159,7 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.space = "\u00a0"
 let g:airline_symbols.branch = ""
-let g:airline#extensions#branch#enabled = 1
-" let g:airline#extensions#branch#displayed_head_limit = 10
-let g:airline#extensions#ctrlp#show_adjacent_modes = 1
+let g:airline#extensions#branch#displayed_head_limit = 10
 let g:airline#extensions#hunks#enabled = 0
 let g:airline_section_x = ""
 let g:airline_section_y = ""
@@ -209,7 +210,7 @@ let g:bookmark_sign = '♥'
 autocmd BufWritePre * :%s/\s\+$//e
 
 " JSON Formatter
-com! FormatJSON %!python -m json.tool
+com! JSONPretty %!python -m json.tool
 
 """""""""""""""""""""
 " Font size changing

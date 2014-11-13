@@ -1,6 +1,6 @@
 " ~/.vim/sessions/rester_server.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 11 November 2014 at 20:43:53.
+" Created by session.vim 2.6.1 on 12 November 2014 at 10:56:51.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -13,7 +13,7 @@ if &background != 'dark'
 	set background=dark
 endif
 if !exists('g:colors_name') || g:colors_name != 'badwolf' | colorscheme badwolf | endif
-call setqflist([{'lnum': 5, 'col': 0, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/server.go', 'text': '2: cannot find package "github.com/gorilla/mux" in any of:'}, {'lnum': 0, 'col': 0, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/.vim/vimrc', 'text': '	/usr/lib/go/src/pkg/github.com/gorilla/mux (from $GOROOT)'}, {'lnum': 0, 'col': 0, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/.vim/vimrc', 'text': '	($GOPATH not set)'}])
+call setqflist([])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
@@ -24,10 +24,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +87 ~/.vim/vimrc
-badd +1 server.go
+badd +52 server.go
+badd +7 templates/layout.html
+badd +3 templates/index.html
+badd +4 templates/test.html
+badd +69 ~/.oh-my-zsh/themes/agnoster.zsh-theme
+badd +112 ~/.zshrc
 silent! argdel *
-edit server.go
+edit ~/.zshrc
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -42,12 +46,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 24) / 48)
+let s:l = 101 - ((33 * winheight(0) + 32) / 65)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+101
+normal! 037|
 lcd ~/Workspace/go/src/bitbucket.com/gschier/resterserver
 tabnext 1
 if exists('s:wipebuf')

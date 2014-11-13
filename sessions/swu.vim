@@ -1,6 +1,6 @@
 " ~/.vim/sessions/swu.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 11 November 2014 at 19:48:16.
+" Created by session.vim 2.6.1 on 12 November 2014 at 17:56:40.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -13,20 +13,22 @@ if &background != 'dark'
 	set background=dark
 endif
 if !exists('g:colors_name') || g:colors_name != 'badwolf' | colorscheme badwolf | endif
-call setqflist([{'lnum': 29, 'col': 52, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/integrations/segio/ajax.py', 'text': '        return super(SegioEnvironmentRestAPI, self)._post(data=data)'}])
+call setqflist([{'lnum': 29, 'col': 52, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/swu/sendwithus_track/apps/integrations/segio/ajax.py', 'text': '        return super(SegioEnvironmentRestAPI, self)._post(data=data)'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Workspace/sendwithus
+cd ~/Workspace/swu/sendwithus
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +31 apps/integrations/segio/ajax.py
+badd +67 apps/api/v1/views/customers.py
+badd +177 apps/api/v1/urls.py
+badd +19 apps/api/v1/views/wellorg.py
 silent! argdel *
-edit apps/integrations/segio/ajax.py
+edit apps/api/v1/views/wellorg.py
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -41,12 +43,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 31 - ((23 * winheight(0) + 24) / 48)
+let s:l = 39 - ((38 * winheight(0) + 32) / 65)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-31
-normal! 09|
+39
+normal! 054|
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

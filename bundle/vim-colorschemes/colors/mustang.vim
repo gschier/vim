@@ -51,8 +51,6 @@ hi Special    guifg=#ff9800 gui=none ctermfg=208
 hi PreProc    guifg=#faf4c6 gui=none ctermfg=230
 hi Todo       guifg=#000000 guibg=#e6ea50 gui=italic
 
-hi SignColumn      guifg=#A6E22E guibg=#232526
-
 " Code-specific colors
 hi pythonOperator guifg=#7e8aa2 gui=none ctermfg=103
 

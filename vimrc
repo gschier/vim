@@ -10,14 +10,49 @@
 " properly set to work with the Vim-related packages available in Debian.
 runtime! debian.vim
 
-" Enable syntax highlighting
-if has("syntax")
-  syntax on
-endif
 
-" If using a dark background within the editing area and syntax highlighting
-" turn on this option as well
-set background=dark
+"""""""""""""""""""""
+" Start Vundle
+"
+    set nocompatible   " be iMproved, required
+    filetype off       " required
+
+    " set the runtime path to include Vundle and initialize
+    set rtp+=~/.vim/bundle/vundle
+    call vundle#begin()
+
+    " let Vundle manage Vundle, required
+    Plugin 'gmarik/Vundle.vim'
+
+    Plugin 'bling/vim-airline'
+    Plugin 'MattesGroeger/vim-bookmarks'
+    Plugin 'bling/vim-bufferline'
+    Plugin 'kchmck/vim-coffee-script'
+    Plugin 'flazz/vim-colorschemes'
+    Plugin 'kien/ctrlp.vim'
+    Plugin 'vim-scripts/EasyGrep'
+    Plugin 'mattn/emmet-vim'
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'mattn/gist-vim'
+    Plugin 'airblade/vim-gitgutter'
+    Plugin 'fatih/vim-go'
+    Plugin 'pangloss/vim-javascript'
+    Plugin 'mxw/vim-jsx'
+    Plugin 'groenewege/vim-less'
+    Plugin 'xolox/vim-misc'
+    Plugin 'xolox/vim-session'
+    Plugin 'ervandew/supertab'
+    Plugin 'scrooloose/syntastic'
+    Plugin 'tomtom/tcomment_vim'
+    Plugin 'KabbAmine/vCoolor.vim'
+    Plugin 'mattn/webapi-vim'
+
+    " All of your Plugins must be added before the following line
+    call vundle#end()            " required
+    filetype plugin indent on    " required
+"
+" End Vundle
+"""""""""""""""""""""
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
@@ -51,11 +86,6 @@ au BufNewFile,BufRead *.md  setf markdown
 autocmd Filetype html setlocal spell spelllang=en_us
 autocmd Filetype markdown setlocal spell spelllang=en_us
 
-" Source a global configuration file if available
-if filereadable("/etc/vim/vimrc.local")
-  source /etc/vim/vimrc.local
-endif
-
 set number
 set nowrap
 set autoindent
@@ -81,6 +111,7 @@ set splitbelow
 set cursorline
 set showtabline=1
 
+
 " Set leader key to ','
 let mapleader=","
 
@@ -99,26 +130,20 @@ else
     colorscheme wombat
 endif
 
-highlight Comment cterm=bold
-highlight LineNr guibg=grey14
+""for omnifunc
+"filetype plugin on
+"set ofu=syntaxcomplete#Complete
 
-"for omnifunc
-filetype plugin on
-set ofu=syntaxcomplete#Complete
-
-" MAPPINGS
-nmap <leader>rc :e $MYVIMRC<cr>
+"" MAPPINGS
+"nmap <leader>rc :e $MYVIMRC<cr>
 nmap <C-S-f> :Grep<space>
-nmap <C-S-s> :OpenSession<space>
+"nmap <C-S-s> :OpenSession<space>
 
 " FOR HTML syntax in php files
 au BufRead,BufNewFile *.php set ft=php.html
 
 " Colemak bindings
 source ~/.vim/colemak.vim
-
-" Package manager
-execute pathogen#infect()
 
 " Ignore stupid files
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/migrations/*,*.pyc,*/node_modules/*,*/dist/*,*/things/*
@@ -148,8 +173,6 @@ let g:ctrlp_match_window = 'top,order:ttb,min:15,max:15'
 
 " Start gvim maximized
 if has("gui_running")
-    " GUI is running or is about to start.
-    " Maximize gvim window.
     set lines=999 columns=999
 endif
 
@@ -248,5 +271,3 @@ endfunction
 nmap ++  :call EnlargeFont()<CR>
 nmap -- :call ShrinkFont()<CR>
 nmap 00 :call DefaultFont()<CR>
-
-autocmd BufRead *.csv,*.tsv syntax off

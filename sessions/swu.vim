@@ -1,10 +1,10 @@
 " ~/.vim/sessions/swu.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 21 November 2014 at 21:48:57.
+" Created by session.vim 2.7 on 21 November 2014 at 22:35:38.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 15
+silent! set guifont=Ubuntu\ Mono\ 14
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -24,13 +24,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +190 ~/.vim/vimrc
 silent! argdel *
+edit ~/.vim/vimrc
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-" argglobal
-enew
+argglobal
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -39,6 +40,13 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
+silent! normal! zE
+let s:l = 109 - ((23 * winheight(0) + 24) / 49)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+109
+normal! 028|
 lcd ~/Workspace/swu/sendwithus
 tabnext 1
 if exists('s:wipebuf')

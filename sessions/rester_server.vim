@@ -1,6 +1,6 @@
 " ~/.vim/sessions/rester_server.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 12 November 2014 at 10:56:51.
+" Created by session.vim 2.6.1 on 16 November 2014 at 16:34:03.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -24,14 +24,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +52 server.go
-badd +7 templates/layout.html
+badd +65 server.go
+badd +12 templates/layout.html
 badd +3 templates/index.html
-badd +4 templates/test.html
-badd +69 ~/.oh-my-zsh/themes/agnoster.zsh-theme
-badd +112 ~/.zshrc
+badd +8 Dockerfile
+badd +6 Dockerrun.aws.json
+badd +4 run
 silent! argdel *
-edit ~/.zshrc
+edit templates/index.html
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -46,12 +46,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 101 - ((33 * winheight(0) + 32) / 65)
+let s:l = 4 - ((3 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-101
-normal! 037|
+4
+normal! 025|
 lcd ~/Workspace/go/src/bitbucket.com/gschier/resterserver
 tabnext 1
 if exists('s:wipebuf')

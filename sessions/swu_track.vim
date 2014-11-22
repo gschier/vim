@@ -1,6 +1,6 @@
 " ~/.vim/sessions/swu_track.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 12 November 2014 at 09:16:33.
+" Created by session.vim 2.6.1 on 16 November 2014 at 22:01:10.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -24,9 +24,17 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 apps/track/views.py
+badd +23 apps/track/views.py
+badd +37 Dockerfile
+badd +19 settings/heroku/gunicorn.py
+badd +7 settings/dev/greg.py
+badd +1 Procfile_public
+badd +8 apps/track/urls.py
+badd +1 Procfile
+badd +1 bin/web.sh
+badd +8 Dockerrun.aws.json
 silent! argdel *
-edit apps/track/views.py
+edit Dockerfile
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -41,12 +49,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 23 - ((22 * winheight(0) + 24) / 48)
+let s:l = 36 - ((35 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-23
-normal! 023|
+36
+normal! 050|
+lcd ~/Workspace/swu/sendwithus_track
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

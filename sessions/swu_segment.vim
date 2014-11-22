@@ -1,6 +1,6 @@
-" ~/.vim/sessions/swu.vim:
+" ~/.vim/sessions/swu_segment.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 21 November 2014 at 21:48:57.
+" Created by session.vim 2.6.1 on 16 November 2014 at 23:28:24.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -12,14 +12,14 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'gruvbox' | colorscheme gruvbox | endif
-call setqflist([{'lnum': 39, 'col': 9, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/integrations/segio/processors.py', 'text': '        _process_identify(api_key.profile_id, segio_environment, event, api_key)'}, {'lnum': 47, 'col': 5, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/integrations/segio/processors.py', 'text': 'def _process_identify(profile_id, segio_environment, event, api_key):'}])
+if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
+call setqflist([{'lnum': 35, 'col': 39, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/apps/logs/models.py', 'text': '        (EVENT_TYPE_FAILED_TO_QUEUE, ''Failed to Queue''),'}, {'lnum': 36, 'col': 38, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/apps/logs/models.py', 'text': '        (EVENT_TYPE_FAILED_TO_SEND, ''Failed to Send''),'}, {'lnum': 18, 'col': 27, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/track/management/commands/initialize_relay_queues.py', 'text': '            logger.error(''Failed to initialize relay queues: %s'' % str(e))'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Workspace/swu/sendwithus
+cd ~/Workspace/swu/sendwithus_track
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -39,7 +39,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-lcd ~/Workspace/swu/sendwithus
+lcd ~/Workspace/swu/sendwithus_track
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

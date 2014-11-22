@@ -1,10 +1,10 @@
 " ~/.vim/sessions/blog.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 03 November 2014 at 00:49:49.
+" Created by session.vim 2.6.1 on 18 November 2014 at 23:02:51.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 14
+silent! set guifont=Ubuntu\ Mono\ 15
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -12,8 +12,8 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
-call setqflist([{'lnum': 114, 'col': 34, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/apps/integrations/management/commands/run_segmentio_worker.py', 'text': '                    logger.info(''Failed to read from ironmq: profile_id=%s, e=%s'' % ('}])
+if !exists('g:colors_name') || g:colors_name != 'base16-atelierdune' | colorscheme base16-atelierdune | endif
+call setqflist([])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
@@ -24,15 +24,9 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +279 static/styles/main.css
-badd +192 templates/layout.html
-badd +23 content/index.html
-badd +1 static/styles/bootstrap.css
-badd +1 static/styles/bootstrap.min.css
-badd +72 config.json
-badd +14 content/blog/index.html
+badd +0 content/blog/2014/11/18/One\ Monitor\ is\ All\ You\ Need.md
 silent! argdel *
-edit templates/layout.html
+edit content/blog/2014/11/18/One\ Monitor\ is\ All\ You\ Need.md
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -47,12 +41,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 82 - ((24 * winheight(0) + 25) / 50)
+let s:l = 35 - ((34 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-82
-normal! 024|
+35
+normal! 019|
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

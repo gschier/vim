@@ -89,7 +89,16 @@ let $GOPATH = '/home/gschier/Workspace/go'
 " Ctrl-Space omnicompletion
 imap <C-Space> <C-x><C-o>
 
-colorscheme badwolf
+if has("gui_running")
+    colorscheme gruvbox
+    " colorscheme mustang
+    " colorscheme molokai
+    " colorscheme base16-atelierdune
+    " colorscheme hybrid
+else
+    colorscheme wombat
+endif
+
 highlight Comment cterm=bold
 highlight LineNr guibg=grey14
 

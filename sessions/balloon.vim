@@ -1,6 +1,6 @@
 " ~/.vim/sessions/balloon.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 02 November 2014 at 20:43:56.
+" Created by session.vim 2.6.1 on 18 November 2014 at 22:33:46.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -12,8 +12,8 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'badwolf' | colorscheme badwolf | endif
-call setqflist([{'lnum': 108, 'col': 9, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'lib/app.js', 'text': '    var layoutPath = pathHelper.join(templatesPath, ''layout.html'');'}, {'lnum': 108, 'col': 54, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'lib/app.js', 'text': '    var layoutPath = pathHelper.join(templatesPath, ''layout.html'');'}, {'lnum': 165, 'col': 24, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'lib/app.js', 'text': '            renderPage(layoutPath, p, ctx, function (err, html) {'}, {'lnum': 331, 'col': 22, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'lib/app.js', 'text': 'function renderPage (layoutPath, pagePath, context, callback) {'}, {'lnum': 340, 'col': 45, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'lib/app.js', 'text': '            var html = swig.render(readFile(layoutPath), { locals: context });'}, {'lnum': 344, 'col': 45, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'lib/app.js', 'text': '        callback(null, swig.render(readFile(layoutPath), { locals: context }));'}])
+if !exists('g:colors_name') || g:colors_name != 'base16-atelierdune' | colorscheme base16-atelierdune | endif
+call setqflist([])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
@@ -24,97 +24,30 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +22 lib/app.js
-badd +2 package.json
+badd +35 ~/Workspace/go/src/github.com/sendwithus/sendwithus_segio/server.go
+badd +12 ~/Workspace/go/src/github.com/sendwithus/sendwithus_segio/Dockerfile
 silent! argdel *
-edit lib/app.js
+edit ~/Workspace/go/src/github.com/sendwithus/sendwithus_segio/server.go
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 " argglobal
-setlocal fdm=syntax
+setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=4
+setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-55
-silent! normal! zo
-67
-silent! normal! zo
-77
-silent! normal! zo
-95
-silent! normal! zo
-112
-silent! normal! zo
-164
-silent! normal! zo
-194
-silent! normal! zo
-238
-silent! normal! zo
-323
-silent! normal! zo
-336
-silent! normal! zo
-353
-silent! normal! zo
-356
-silent! normal! zo
-77
-silent! normal! zo
-95
-silent! normal! zo
-112
-silent! normal! zo
-164
-silent! normal! zo
-196
-silent! normal! zo
-240
-silent! normal! zo
-325
-silent! normal! zo
-338
-silent! normal! zo
-355
-silent! normal! zo
-358
-silent! normal! zo
-196
-silent! normal! zo
-240
-silent! normal! zo
-325
-silent! normal! zo
-338
-silent! normal! zo
-355
-silent! normal! zo
-358
-silent! normal! zo
-196
-silent! normal! zo
-240
-silent! normal! zo
-325
-silent! normal! zo
-338
-silent! normal! zo
-355
-silent! normal! zo
-358
-silent! normal! zo
-let s:l = 166 - ((12 * winheight(0) + 24) / 48)
+silent! normal! zE
+let s:l = 29 - ((28 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-166
-normal! 022|
+29
+normal! 036|
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

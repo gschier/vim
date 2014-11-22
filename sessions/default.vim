@@ -1,6 +1,6 @@
 " ~/.vim/sessions/default.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 23 September 2014 at 23:32:12.
+" Created by session.vim 2.6.1 on 14 November 2014 at 14:00:29.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -12,14 +12,14 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'wombat' | colorscheme wombat | endif
+if !exists('g:colors_name') || g:colors_name != 'badwolf' | colorscheme badwolf | endif
 call setqflist([])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Workspace/sendwithus
+cd ~/Workspace/swu
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif

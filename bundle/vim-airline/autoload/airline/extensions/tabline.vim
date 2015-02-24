@@ -1,10 +1,13 @@
 " MIT License. Copyright (c) 2013-2014 Bailey Ling.
 " vim: et ts=2 sts=2 sw=2
 
+scriptencoding utf-8
+
 let s:formatter = get(g:, 'airline#extensions#tabline#formatter', 'default')
 let s:excludes = get(g:, 'airline#extensions#tabline#excludes', [])
 let s:tab_nr_type = get(g:, 'airline#extensions#tabline#tab_nr_type', 0)
 let s:show_buffers = get(g:, 'airline#extensions#tabline#show_buffers', 1)
+let s:show_tabs = get(g:, 'airline#extensions#tabline#show_tabs', 1)
 let s:show_tab_nr = get(g:, 'airline#extensions#tabline#show_tab_nr', 1)
 let s:show_tab_type = get(g:, 'airline#extensions#tabline#show_tab_type', 1)
 let s:show_close_button = get(g:, 'airline#extensions#tabline#show_close_button', 1)
@@ -56,19 +59,23 @@ function! s:toggle_on()
   let [ s:original_tabline, s:original_showtabline ] = [ &tabline, &showtabline ]
 
   set tabline=%!airline#extensions#tabline#get()
-  if s:buf_min_count <= 0 && s:tab_min_count <= 1
-    set showtabline=2
-  else
-    augroup airline_tabline
-      autocmd!
+  augroup airline_tabline
+    autocmd!
+    if s:buf_min_count <= 0 && s:tab_min_count <= 1
+      set showtabline=2
+    else
       if s:show_buffers == 1
-        autocmd BufEnter * call <sid>show_tabline(s:buf_min_count, len(s:get_buffer_list()))
+        autocmd BufEnter  * call <sid>show_tabline(s:buf_min_count, len(s:get_buffer_list()))
         autocmd BufUnload * call <sid>show_tabline(s:buf_min_count, len(s:get_buffer_list()) - 1)
       else
-        autocmd TabEnter * call <sid>show_tabline(s:tab_min_count, tabpagenr('$'))
+        autocmd TabEnter  * call <sid>show_tabline(s:tab_min_count, tabpagenr('$'))
       endif
-    augroup END
-  endif
+    endif
+
+    " Invalidate cache.  This has to come after the BufUnload for
+    " s:show_buffers, to invalidate the cache for BufEnter.
+    autocmd BufAdd,BufUnload * unlet! s:current_buffer_list
+  augroup END
 endfunction
 
 function! airline#extensions#tabline#load_theme(palette)
@@ -113,7 +120,7 @@ function! airline#extensions#tabline#get()
     let s:current_tabcnt = curtabcnt
     let s:current_bufnr = -1  " force a refresh...
   endif
-  if s:show_buffers && curtabcnt == 1
+  if s:show_buffers && curtabcnt == 1 || !s:show_tabs
     return s:get_buffers()
   else
     return s:get_tabs()
@@ -127,23 +134,31 @@ function! airline#extensions#tabline#title(n)
 endfunction
 
 function! airline#extensions#tabline#get_buffer_name(nr)
-  return airline#extensions#tabline#{s:formatter}#format(a:nr, get(s:, 'current_buffer_list', s:get_buffer_list()))
+  return airline#extensions#tabline#{s:formatter}#format(a:nr, s:get_buffer_list())
 endfunction
 
 function! s:get_buffer_list()
+  if exists('s:current_buffer_list')
+    return s:current_buffer_list
+  endif
+
   let buffers = []
   let cur = bufnr('%')
   for nr in range(1, bufnr('$'))
     if buflisted(nr) && bufexists(nr)
+      let toadd = 1
       for ex in s:excludes
-        if match(bufname(nr), ex)
-          continue
+        if match(bufname(nr), ex) >= 0
+          let toadd = 0
+          break
         endif
       endfor
       if getbufvar(nr, 'current_syntax') == 'qf'
-        continue
+        let toadd = 0
       endif
-      call add(buffers, nr)
+      if toadd
+        call add(buffers, nr)
+      endif
     endif
   endfor
 

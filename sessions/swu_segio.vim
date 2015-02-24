@@ -1,6 +1,6 @@
 " ~/.vim/sessions/swu_segio.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 20 November 2014 at 12:23:59.
+" Created by session.vim 2.7 on 09 February 2015 at 11:49:13.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -24,15 +24,16 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +40 server.go
-badd +48 lib/handler.go
+badd +5 server.go
+badd +14 lib/auth.go
+badd +10 lib/handler.go
 silent! argdel *
-edit lib/handler.go
+edit server.go
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-" argglobal
+argglobal
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -42,12 +43,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 55 - ((33 * winheight(0) + 31) / 62)
+let s:l = 88 - ((38 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-55
-normal! 05|
+88
+normal! 0
 lcd ~/Workspace/go/src/github.com/sendwithus/sendwithus_segio
 tabnext 1
 if exists('s:wipebuf')

@@ -1,10 +1,10 @@
-" ~/.vim/sessions/todo_cli.vim:
+" ~/.vim/sessions/insomnia.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 28 July 2014 at 11:26:15.
+" Created by session.vim 2.7 on 23 February 2015 at 22:13:13.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 14
+silent! set guifont=Ubuntu\ Mono\ 17
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -12,28 +12,29 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
-call setqflist([{'lnum': 5, 'col': 67, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'lib/npm-debug.log', 'text': '4 error Error: ENOENT, open ''/home/gschier/Workspace/todo/cli/lib/package.json'''}, {'lnum': 14, 'col': 52, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'lib/npm-debug.log', 'text': '11 error path /home/gschier/Workspace/todo/cli/lib/package.json'}])
+if !exists('g:colors_name') || g:colors_name != 'gruvbox' | colorscheme gruvbox | endif
+call setqflist([{'lnum': 36, 'col': 12, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'javascript/storage.js', 'text': '    rester.pauseListeners = function () {'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Workspace/todo/cli
+cd ~/Workspace/insomnia/app/package
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +209 lib/components/Todo.js
-badd +59 lib/app.js
-badd +32 form.js
+badd +360 javascript/src/app.jsx
+badd +32 javascript/src/header.jsx
+badd +6 javascript/storage.js
+badd +253 javascript/src/sidebar.jsx
 silent! argdel *
-edit lib/components/Todo.js
+edit javascript/storage.js
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-" argglobal
+argglobal
 setlocal fdm=syntax
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -42,35 +43,58 @@ setlocal fdl=4
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-21
+4
 silent! normal! zo
-25
+30
 silent! normal! zo
-41
+36
 silent! normal! zo
-96
+59
 silent! normal! zo
-110
+67
 silent! normal! zo
-41
+70
 silent! normal! zo
-96
+105
 silent! normal! zo
-110
+126
 silent! normal! zo
-let s:l = 103 - ((50 * winheight(0) + 34) / 68)
+168
+silent! normal! zo
+195
+silent! normal! zo
+207
+silent! normal! zo
+36
+silent! normal! zo
+63
+silent! normal! zo
+71
+silent! normal! zo
+74
+silent! normal! zo
+109
+silent! normal! zo
+130
+silent! normal! zo
+172
+silent! normal! zo
+196
+silent! normal! zo
+208
+silent! normal! zo
+let s:l = 51 - ((24 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-103
-normal! 016|
-lcd ~/Workspace/todo/cli
+51
+normal! 018|
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
 endif
 " unlet! s:wipebuf
-set winheight=1 winwidth=20 shortmess=filnxtToO
+set winheight=1 winwidth=1 shortmess=aoO
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)

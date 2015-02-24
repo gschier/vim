@@ -1,6 +1,6 @@
-" ~/.vim/sessions/todo_server.vim:
+" ~/.vim/sessions/insomnia_landing.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 27 July 2014 at 13:58:41.
+" Created by session.vim 2.7 on 15 February 2015 at 23:00:40.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -12,41 +12,33 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
-call setqflist([{'lnum': 5072, 'col': 16, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/static/src/lib/metronic/style.css', 'text': '.social-icons .spotify {background: url(../img/social/spotify.png) no-repeat;}'}, {'lnum': 5072, 'col': 55, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/static/src/lib/metronic/style.css', 'text': '.social-icons .spotify {background: url(../img/social/spotify.png) no-repeat;}'}])
+if !exists('g:colors_name') || g:colors_name != 'gruvbox' | colorscheme gruvbox | endif
+call setqflist([{'lnum': 351, 'col': 29, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'static/js/src/app.jsx', 'text': '            rester.trigger(''show_category_create'', this.state.activeCategory);'}, {'lnum': 40, 'col': 24, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'static/js/src/modals.jsx', 'text': '        rester.listen(''show_category_create'', function (data) {'}, {'lnum': 5, 'col': 25, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'static/js/src/sidebar.jsx', 'text': '        rester.trigger(''show_category_create'', { category: category });'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Workspace/todo/server
+cd ~/Workspace/insomnia/landing
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +15 package.json
-badd +0 app.js
 silent! argdel *
-edit app.js
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-" argglobal
-setlocal fdm=syntax
+argglobal
+enew
+setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=4
+setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 24) / 48)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

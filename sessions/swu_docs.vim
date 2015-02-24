@@ -1,6 +1,6 @@
 " ~/.vim/sessions/swu_docs.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 30 September 2014 at 18:00:00.
+" Created by session.vim 2.7 on 02 February 2015 at 16:24:21.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -12,26 +12,27 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
-call setqflist([{'lnum': 193, 'col': 42, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/4swu/views.py', 'text': '        customer[''has_sent_email''] = len(profile.send_logs.all()) > 0'}, {'lnum': 12, 'col': 28, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/dashboard/views.py', 'text': '    hasnt_sent_email = not profile.send_logs.exists()'}])
+if !exists('g:colors_name') || g:colors_name != 'gruvbox' | colorscheme gruvbox | endif
+call setqflist([{'lnum': 5, 'col': 39, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/integrations/segio/models.py', 'text': 'from boto.dynamodb2.exceptions import ConditionalCheckFailedException'}, {'lnum': 67, 'col': 16, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/integrations/segio/models.py', 'text': '        except ConditionalCheckFailedException:'}, {'lnum': 40, 'col': 51, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/logs/workers.py', 'text': '            from boto.dynamodb2.exceptions import ConditionalCheckFailedException'}, {'lnum': 43, 'col': 20, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/logs/workers.py', 'text': '            except ConditionalCheckFailedException:'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Workspace/sendwithus_docs
+cd ~/Workspace/swu/docs
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 v1/templates.md
+badd +111 v1/customers.md
+badd +1 v1/logs.md
 silent! argdel *
-edit v1/templates.md
+edit v1/customers.md
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-" argglobal
+argglobal
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -41,12 +42,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 53 - ((25 * winheight(0) + 32) / 65)
+let s:l = 73 - ((35 * winheight(0) + 32) / 65)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-53
-normal! 0
+73
+normal! 028|
+lcd ~/Workspace/swu/docs
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

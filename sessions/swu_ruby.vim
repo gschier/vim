@@ -1,10 +1,10 @@
-" ~/.vim/sessions/startup_slam.vim:
+" ~/.vim/sessions/swu_ruby.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 23 September 2014 at 12:27:16.
+" Created by session.vim 2.7 on 16 December 2014 at 17:17:48.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 14
+silent! set guifont=Ubuntu\ Mono\ 17
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -12,29 +12,34 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
-call setqflist([{'lnum': 501, 'col': 47, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/api/v1/tests.py', 'text': '        self.assertEquals(events[0].message, ''APIv1 send request'')'}, {'lnum': 372, 'col': 15, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/api/v1/views/send.py', 'text': '            u''APIv1.send: profile_id=%s, user_layout_id=%s, recipient=%s, receipt_id=%s'','}, {'lnum': 385, 'col': 28, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/api/v1/views/send.py', 'text': '            event_message=''APIv1 send request'','}, {'lnum': 396, 'col': 44, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/api/v1/views/send.py', 'text': '            logger.error(''Failed to handle APIv1.send! profile=%s, mongo_id[%s], exception=%s'' % ('}, {'lnum': 400, 'col': 18, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/api/v1/views/send.py', 'text': '                "APIv1.send shit gone wrong. Way wrong. Nick wrong. Wrong.")'}])
+if !exists('g:colors_name') || g:colors_name != 'gruvbox' | colorscheme gruvbox | endif
+call setqflist([{'lnum': 39, 'col': 9, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/integrations/segio/processors.py', 'text': '        _process_identify(api_key.profile_id, segio_environment, event, api_key)'}, {'lnum': 47, 'col': 5, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/integrations/segio/processors.py', 'text': 'def _process_identify(profile_id, segio_environment, event, api_key):'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Workspace/startup_slam
+cd ~/Workspace/swu/sendwithus_ruby
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +50 static/index.html
-badd +21 README.md
-badd +6 package.json
-badd +1 tutorials/4_theme/static/css/style.css
+badd +59 test/lib/send_with_us/api_request_test.rb
+badd +81 lib/send_with_us/api.rb
+badd +106 README.md
+badd +2 lib/send_with_us/version.rb
+badd +1 lib/send_with_us.rb
+badd +50 lib/send_with_us/api_request.rb
+badd +1 Gemfile
+badd +1 Rakefile
+badd +1 send_with_us.gemspec
 silent! argdel *
-edit tutorials/4_theme/static/css/style.css
+edit README.md
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-" argglobal
+argglobal
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -44,12 +49,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 814 - ((0 * winheight(0) + 34) / 68)
+let s:l = 120 - ((29 * winheight(0) + 29) / 59)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-814
-normal! 0
+120
+normal! 060|
+lcd ~/Workspace/swu/sendwithus_ruby
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

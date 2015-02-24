@@ -77,6 +77,11 @@ nmap <Leader>k <Plug>BookmarkPrev
 nmap <Leader>c <Plug>BookmarkClear
 nmap <Leader>x <Plug>BookmarkClearAll
 ```
+You can disable all default key bindings by setting the following in your `~/.vimrc`:
+
+```viml
+let g:bookmark_no_default_key_mappings = 1
+```
 
 ### Colors
 
@@ -104,6 +109,7 @@ Put any of the following options into your `~/.vimrc` in order to overwrite the 
 | `let g:bookmark_highlight_lines = 1`           | 0                        | Enables/disables line highlighting                      |
 | `let g:bookmark_show_warning = 0`              | 1                        | Enables/disables warning when clearing all bookmarks    |
 | `let g:bookmark_center = 1`                    | 0                        | Enables/disables line centering when jumping to bookmark|
+| `let g:bookmark_no_default_key_mappings = 1`                    | 0                        | Prevent any default key mapping from being created|
 
 ### Bookmarks per working directory
 
@@ -147,15 +153,16 @@ endfunction
 Call functions BookmarkSave, BookmarkLoad and BookmarkClearAll with the last argument set to 0 to perform these operations silently. You may use this to manage your bookmark list transparently from within your custom script.
 
 ## Unite Integration
+![A screenshot of vim-bookmarks' Unite interface](./screenshot-unite-interface.png)
 
-[Unite](https://github.com/Shougo/unite.vim) is a multi-purpose user-interface plugin platform. If it's part of your workflow, make sure you have a 'quickfix' source, a good one can be found [here](https://github.com/osyo-manga/unite-quickfix).
-When showing all your bookmarks, Unite is detected and the plugin will open `:Unite quickfix` instead of Vim's quickfix window.
-Note that `g:bookmark_auto_close` is no longer applied, once opened, the window is managed by Unite.
+[Unite](https://github.com/Shougo/unite.vim) is a multi-purpose user-interface plugin platform. Vim-bookmarks provides a Unite source called `vim_bookmarks` so users who use Unite will handle bookmarks with the Unite interface.
 
-To set a global per-source context setting, that will apply to Unite's quickfix source everytime it's opened, you can add this to your `vimrc`:
+Additionally, when showing all your bookmarks, Unite is detected and the plugin will open `:Unite vim_bookmarks` instead of Vim's quickfix window. Note that `g:bookmark_auto_close` is no longer applied. Once opened, the window is managed by Unite.
+
+To set a global per-source context setting, that will apply to Unite's vim_bookmarks source everytime it's opened, you can add this to your `vimrc`:
 
 ```viml
-call unite#custom#profile('source/quickfix,source/location_list', 'context', {
+call unite#custom#profile('source/vim_bookmarks', 'context', {
 	\   'winheight': 13,
 	\   'direction': 'botright',
 	\   'start_insert': 0,
@@ -163,6 +170,19 @@ call unite#custom#profile('source/quickfix,source/location_list', 'context', {
 	\   'no_quit': 1,
 	\ })
 ```
+
+With the Unite interface, when you select bookmarks, you can perform the following actions:
+
+* Open the selected bookmarks in various ways (open to the right, open above, open in new tab, etc.)
+* Yank the informations of selected bookmarks (path and line number, the line content, annotation, etc.)
+* Highlight the lines of the selected bookmarks
+* Replace the contents of selected bookmarks with [vim-qfreplace](https://github.com/thinca/vim-qfreplace) interface
+* Delete the selected bookmarks
+* And more...
+
+See the screenshot below to get an idea of what you can do with the interface (the picture shows only a fraction, that means you can select even more actions):
+
+![A screenshot of action list of vim-bookmarks' Unite interface](./screenshot-unite-interface-actions.png)
 
 For more information about Unite, start reading `:help Unite`.
 

@@ -1,7 +1,7 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/gschier/Workspace/swu/sendwithus_track/apps/webfront'
-let g:netrw_dirhist_2='/home/gschier/Workspace/swu/sendwithus_track/apps/webfront/templates'
-let g:netrw_dirhist_3='/home/gschier/Workspace/swu/sendwithus_track/apps/webfront'
-let g:netrw_dirhist_4='/home/gschier/Workspace/go/src/github.com/sendwithus/sendwithus_segio'
-let g:netrw_dirhist_5='/home/gschier/Workspace/swu/sendwithus_deploy/ssl/sendwithus.com/2014.04/wildcard'
+let g:netrw_dirhist_1='/home/gschier/Workspace/swu/sendwithus/static'
+let g:netrw_dirhist_2='/home/gschier/.cowsay/cowfiles'
+let g:netrw_dirhist_3='/home/gschier/Workspace/battlesnake-greg/app'
+let g:netrw_dirhist_4='/home/gschier/Workspace/battlesnake-greg'
+let g:netrw_dirhist_5='/home/gschier/Workspace/battlesnake-greg/app'

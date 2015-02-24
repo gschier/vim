@@ -1,10 +1,10 @@
 " ~/.vim/sessions/balloon.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 18 November 2014 at 22:33:46.
+" Created by session.vim 2.7 on 21 December 2014 at 11:15:07.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 15
+silent! set guifont=Ubuntu\ Mono\ 17
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -12,7 +12,7 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'base16-atelierdune' | colorscheme base16-atelierdune | endif
+if !exists('g:colors_name') || g:colors_name != 'gruvbox' | colorscheme gruvbox | endif
 call setqflist([])
 let SessionLoad = 1
 if &cp | set nocp | endif
@@ -24,30 +24,40 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +35 ~/Workspace/go/src/github.com/sendwithus/sendwithus_segio/server.go
-badd +12 ~/Workspace/go/src/github.com/sendwithus/sendwithus_segio/Dockerfile
+badd +1 balloon.js
 silent! argdel *
-edit ~/Workspace/go/src/github.com/sendwithus/sendwithus_segio/server.go
+edit balloon.js
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-" argglobal
-setlocal fdm=manual
+argglobal
+setlocal fdm=syntax
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=0
+setlocal fdl=4
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-silent! normal! zE
-let s:l = 29 - ((28 * winheight(0) + 24) / 48)
+24
+silent! normal! zo
+44
+silent! normal! zo
+47
+silent! normal! zo
+116
+silent! normal! zo
+152
+silent! normal! zo
+208
+silent! normal! zo
+let s:l = 173 - ((38 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-29
-normal! 036|
+173
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

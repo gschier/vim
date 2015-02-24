@@ -1,10 +1,10 @@
-" ~/.vim/sessions/urltree.vim:
+" ~/.vim/sessions/sessioner.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 01 October 2014 at 18:07:50.
+" Created by session.vim 2.7 on 09 December 2014 at 12:31:23.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 15
+silent! set guifont=Ubuntu\ Mono\ 16
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -12,28 +12,27 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
-call setqflist([{'lnum': 398, 'col': 7, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/apps/cohorts/workers.py', 'text': 'class SegmentExportWorker(QueueWorker):'}, {'lnum': 15, 'col': 34, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/apps/customers/ajax.py', 'text': 'from apps.cohorts.workers import SegmentExportWorker, SegmentSendWorker'}, {'lnum': 436, 'col': 5, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/apps/customers/ajax.py', 'text': '    SegmentExportWorker().later(profile, request.user.email, rules)'}, {'lnum': 18, 'col': 5, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/apps/queuing/management/commands/run_consumer.py', 'text': '    SegmentExportWorker'}, {'lnum': 47, 'col': 23, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/apps/queuing/management/commands/run_consumer.py', 'text': '    ''segment_export'': SegmentExportWorker,'}, {'lnum': 221, 'col': 43, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/fab/deployment.py', 'text': '        ''consumer_segment_export'': ''1_prd_SegmentExportWorker'''}])
+if !exists('g:colors_name') || g:colors_name != 'gruvbox' | colorscheme gruvbox | endif
+call setqflist([{'lnum': 3, 'col': 19, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/segmentation/resultsetstore.py', 'text': 'from apps.webutil.s3store import S3Store'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Desktop/urltree
+cd ~/Workspace/sessioner
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +16 urltree.py
-badd +8 test.py
-badd +5 vishadata.py
+badd +12 manifest.json
+badd +7 popup.html
 silent! argdel *
-edit urltree.py
+edit popup.html
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-" argglobal
+argglobal
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -43,12 +42,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 32) / 65)
+let s:l = 7 - ((6 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+7
+normal! 089|
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

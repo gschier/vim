@@ -1,6 +1,6 @@
 " ~/.vim/sessions/swu_track.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 16 November 2014 at 22:01:10.
+" Created by session.vim 2.7 on 16 February 2015 at 14:58:21.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -12,7 +12,7 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
+if !exists('g:colors_name') || g:colors_name != 'gruvbox' | colorscheme gruvbox | endif
 call setqflist([{'lnum': 35, 'col': 39, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/apps/logs/models.py', 'text': '        (EVENT_TYPE_FAILED_TO_QUEUE, ''Failed to Queue''),'}, {'lnum': 36, 'col': 38, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/apps/logs/models.py', 'text': '        (EVENT_TYPE_FAILED_TO_SEND, ''Failed to Send''),'}, {'lnum': 18, 'col': 27, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/track/management/commands/initialize_relay_queues.py', 'text': '            logger.error(''Failed to initialize relay queues: %s'' % str(e))'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
@@ -24,22 +24,18 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +23 apps/track/views.py
-badd +37 Dockerfile
-badd +19 settings/heroku/gunicorn.py
-badd +7 settings/dev/greg.py
-badd +1 Procfile_public
-badd +8 apps/track/urls.py
-badd +1 Procfile
-badd +1 bin/web.sh
-badd +8 Dockerrun.aws.json
+badd +6 apps/track/views.py
+badd +2 apps/track/urls.py
+badd +12 apps/webfront/urls.py
+badd +3 apps/webfront/views.py
+badd +173 apps/queuing/workers.py
 silent! argdel *
-edit Dockerfile
+edit apps/webfront/views.py
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-" argglobal
+argglobal
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -49,12 +45,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 36 - ((35 * winheight(0) + 24) / 48)
+let s:l = 3 - ((2 * winheight(0) + 32) / 65)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-36
-normal! 050|
+3
+normal! 0
 lcd ~/Workspace/swu/sendwithus_track
 tabnext 1
 if exists('s:wipebuf')

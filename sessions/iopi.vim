@@ -1,10 +1,10 @@
-" ~/.vim/sessions/swu_vagrant.vim:
+" ~/.vim/sessions/iopi.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 10 November 2014 at 14:03:55.
+" Created by session.vim 2.7 on 29 December 2014 at 16:09:49.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 14
+silent! set guifont=Ubuntu\ Mono\ 18
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -12,30 +12,29 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
-call setqflist([])
+if !exists('g:colors_name') || g:colors_name != 'gruvbox' | colorscheme gruvbox | endif
+call setqflist([{'lnum': 35, 'col': 7, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/account/backends.py', 'text': 'class SuperuserLoginAsUserBackend(object):'}, {'lnum': 210, 'col': 28, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'settings/base.py', 'text': '    ''apps.account.backends.SuperuserLoginAsUserBackend'','}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Workspace/sendwithus_vagrant
+cd ~/Workspace/iopi
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +22 Vagrantfile
-badd +32 install_sudo.sh
-badd +10 install_virtualenv.sh
-badd +11 install_final_setup.sh
-badd +3 install_bashrc.sh
+badd +51 server.py
+badd +34 static/index.html
+badd +11 static/css/main.css
+badd +171 static/js/main.js
 silent! argdel *
-edit install_final_setup.sh
+edit static/css/main.css
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-" argglobal
+argglobal
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -45,12 +44,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 11 - ((10 * winheight(0) + 34) / 68)
+let s:l = 47 - ((40 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-11
-normal! 0
+47
+normal! 018|
+lcd ~/Workspace/iopi
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

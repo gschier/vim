@@ -1,10 +1,10 @@
 " ~/.vim/sessions/swu_segment.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 16 November 2014 at 23:28:24.
+" Created by session.vim 2.7 on 03 December 2014 at 13:54:03.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 15
+silent! set guifont=Ubuntu\ Mono\ 16
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -12,25 +12,31 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
+if !exists('g:colors_name') || g:colors_name != 'gruvbox' | colorscheme gruvbox | endif
 call setqflist([{'lnum': 35, 'col': 39, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/apps/logs/models.py', 'text': '        (EVENT_TYPE_FAILED_TO_QUEUE, ''Failed to Queue''),'}, {'lnum': 36, 'col': 38, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/Workspace/sendwithus/apps/logs/models.py', 'text': '        (EVENT_TYPE_FAILED_TO_SEND, ''Failed to Send''),'}, {'lnum': 18, 'col': 27, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/track/management/commands/initialize_relay_queues.py', 'text': '            logger.error(''Failed to initialize relay queues: %s'' % str(e))'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Workspace/swu/sendwithus_track
+cd ~/Workspace/swu/sendwithus_segment
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +1 test/index.js
+badd +17 lib/index.js
+badd +16 test/fixtures/identify-basic.json
+badd +16 test/fixtures/track-basic.json
+badd +13 lib/mapper.js
+badd +0 Readme.md
 silent! argdel *
+edit Readme.md
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-" argglobal
-enew
+argglobal
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -39,7 +45,13 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-lcd ~/Workspace/swu/sendwithus_track
+silent! normal! zE
+let s:l = 14 - ((13 * winheight(0) + 31) / 62)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+14
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

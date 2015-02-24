@@ -1,10 +1,10 @@
 " ~/.vim/sessions/blog.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 18 November 2014 at 23:02:51.
+" Created by session.vim 2.7 on 12 February 2015 at 14:15:37.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 15
+silent! set guifont=Ubuntu\ Mono\ 14
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -12,8 +12,8 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'base16-atelierdune' | colorscheme base16-atelierdune | endif
-call setqflist([])
+if !exists('g:colors_name') || g:colors_name != 'gruvbox' | colorscheme gruvbox | endif
+call setqflist([{'lnum': 9, 'col': 14, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/balloon.json', 'text': '            "staticUrl": "",'}, {'lnum': 3, 'col': 16, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'content/blog/2013/11/16/Creating Pure CSS Lightboxes With The :target Selector.md', 'text': '<link href="{{ staticUrl }}/styles/lightbox.css" rel="stylesheet" type="text/css">'}, {'lnum': 6, 'col': 16, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'content/blog/2013/11/16/Creating Pure CSS Lightboxes With The :target Selector.md', 'text': '  <img src="{{ staticUrl }}/images/pig-small.jpg">'}, {'lnum': 10, 'col': 16, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'content/blog/2013/11/16/Creating Pure CSS Lightboxes With The :target Selector.md', 'text': '  <img src="{{ staticUrl }}/images/pig-big.jpg">'}, {'lnum': 50, 'col': 16, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'content/blog/2013/11/16/Creating Pure CSS Lightboxes With The :target Selector.md', 'text': '  <img src="{{ staticUrl }}/images/pig-small.jpg">'}, {'lnum': 55, 'col': 16, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'content/blog/2013/11/16/Creating Pure CSS Lightboxes With The :target Selector.md', 'text': '  <img src="{{ staticUrl }}/images/pig-big.jpg">'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
@@ -24,14 +24,15 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 content/blog/2014/11/18/One\ Monitor\ is\ All\ You\ Need.md
+badd +1 static/styles/main.css
+badd +0 dist/styles/main.css
 silent! argdel *
-edit content/blog/2014/11/18/One\ Monitor\ is\ All\ You\ Need.md
+edit dist/styles/main.css
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-" argglobal
+argglobal
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -41,12 +42,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 35 - ((34 * winheight(0) + 24) / 48)
+let s:l = 6 - ((5 * winheight(0) + 13) / 27)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-35
-normal! 019|
+6
+normal! 06|
+lcd ~/Workspace/blog
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

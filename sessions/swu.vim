@@ -1,10 +1,10 @@
 " ~/.vim/sessions/swu.vim:
 " Vim session script.
-" Created by session.vim 2.7 on 21 November 2014 at 22:35:38.
+" Created by session.vim 2.7 on 23 February 2015 at 19:51:44.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 14
+silent! set guifont=Ubuntu\ Mono\ 15
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -13,7 +13,7 @@ if &background != 'dark'
 	set background=dark
 endif
 if !exists('g:colors_name') || g:colors_name != 'gruvbox' | colorscheme gruvbox | endif
-call setqflist([{'lnum': 39, 'col': 9, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/integrations/segio/processors.py', 'text': '        _process_identify(api_key.profile_id, segio_environment, event, api_key)'}, {'lnum': 47, 'col': 5, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/integrations/segio/processors.py', 'text': 'def _process_identify(profile_id, segio_environment, event, api_key):'}])
+call setqflist([])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
@@ -24,9 +24,15 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +190 ~/.vim/vimrc
+badd +37 static/src/coffee/app/AutomationViewModel.coffee
+badd +100 apps/dashboard/templates/dashboard/includes/automation_triggers.html
+badd +19 static/src/coffee/app/SegioEnvironmentDataModel.coffee
+badd +222 apps/automation/events.py
+badd +33 static/src/coffee/app/UserLayoutDataModel.coffee
+badd +52 apps/dashboard/templates/dashboard/includes/ab_test.html
+badd +1213 apps/logs/models.py
 silent! argdel *
-edit ~/.vim/vimrc
+edit apps/automation/events.py
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -41,12 +47,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 109 - ((23 * winheight(0) + 24) / 49)
+let s:l = 35 - ((22 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-109
-normal! 028|
+35
+normal! 026|
 lcd ~/Workspace/swu/sendwithus
 tabnext 1
 if exists('s:wipebuf')

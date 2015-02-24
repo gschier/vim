@@ -1,10 +1,10 @@
-" ~/.vim/sessions/notes.vim:
+" ~/.vim/sessions/renderer.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 09 October 2014 at 11:55:57.
+" Created by session.vim 2.7 on 28 December 2014 at 11:52:34.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 15
+silent! set guifont=Ubuntu\ Mono\ 16
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -12,41 +12,47 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
-call setqflist([{'lnum': 39, 'col': 9, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/segmentation/resultsetstore.py', 'text': '    def upload_result_set(self, profile_id, name, recipient_addresses, chunk_size=100):'}, {'lnum': 35, 'col': 14, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/segmentation/tests.py', 'text': '    def test_upload_result_set(self):'}, {'lnum': 40, 'col': 41, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/segmentation/tests.py', 'text': '        full_path, content_ranges = rss.upload_result_set('}, {'lnum': 246, 'col': 49, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/segmentation/workers.py', 'text': '        result_set_file_name = ResultSetStore().upload_result_set('}, {'lnum': 476, 'col': 45, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/segmentation/workers.py', 'text': '            file_name, content_ranges = rss.upload_result_set(profile_id, timestamp, customers_list)'}])
+if !exists('g:colors_name') || g:colors_name != 'gruvbox' | colorscheme gruvbox | endif
+call setqflist([])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Dropbox/notes
+cd ~/Workspace/renderer
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 static_site_generator.md
+badd +5 manifest.json
+badd +6 background.js
+badd +1 index.html
+badd +1 render.html
+badd +1 index.js
+badd +6 README.md
 silent! argdel *
-edit static_site_generator.md
+edit index.js
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-" argglobal
-setlocal fdm=manual
+argglobal
+setlocal fdm=syntax
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=0
+setlocal fdl=4
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-silent! normal! zE
-let s:l = 59 - ((40 * winheight(0) + 32) / 65)
+1
+silent! normal! zo
+let s:l = 1 - ((0 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-59
-normal! 055|
+1
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

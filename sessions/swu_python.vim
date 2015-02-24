@@ -1,10 +1,10 @@
-" ~/.vim/sessions/forkjoy.vim:
+" ~/.vim/sessions/swu_python.vim:
 " Vim session script.
-" Created by session.vim 2.6.1 on 21 July 2014 at 23:59:22.
+" Created by session.vim 2.7 on 07 January 2015 at 18:16:22.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 15
+silent! set guifont=Ubuntu\ Mono\ 17
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -12,30 +12,29 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
-call setqflist([{'lnum': 5072, 'col': 16, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'static/src/lib/metronic/style.css', 'text': '.social-icons .spotify {background: url(../img/social/spotify.png) no-repeat;}'}, {'lnum': 5072, 'col': 55, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'static/src/lib/metronic/style.css', 'text': '.social-icons .spotify {background: url(../img/social/spotify.png) no-repeat;}'}])
+if !exists('g:colors_name') || g:colors_name != 'gruvbox' | colorscheme gruvbox | endif
+call setqflist([{'lnum': 5, 'col': 39, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/integrations/segio/models.py', 'text': 'from boto.dynamodb2.exceptions import ConditionalCheckFailedException'}, {'lnum': 67, 'col': 16, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/integrations/segio/models.py', 'text': '        except ConditionalCheckFailedException:'}, {'lnum': 40, 'col': 51, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/logs/workers.py', 'text': '            from boto.dynamodb2.exceptions import ConditionalCheckFailedException'}, {'lnum': 43, 'col': 20, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/logs/workers.py', 'text': '            except ConditionalCheckFailedException:'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Workspace/forkjoy
+cd ~/Workspace/swu/sendwithus_python
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +228 api/models/Model.js
-badd +100 README.md
-badd +37 api/models/Address.js
-badd +78 api/models/Restaurant.js
-badd +100 api/controllers/restaurants.js
+badd +50 sendwithus/__init__.py
+badd +234 sendwithus/test/__init__.py
+badd +2 sendwithus/version.py
+badd +0 README.md
 silent! argdel *
 edit README.md
 set splitbelow splitright
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-" argglobal
+argglobal
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -45,12 +44,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 110 - ((46 * winheight(0) + 24) / 48)
+let s:l = 207 - ((8 * winheight(0) + 32) / 65)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-110
-normal! 058|
+207
+normal! 019|
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

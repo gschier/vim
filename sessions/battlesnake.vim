@@ -1,6 +1,6 @@
 " ~/.vim/sessions/battlesnake.vim:
 " Vim session script.
-" Created by session.vim 2.7 on 23 February 2015 at 13:26:38.
+" Created by session.vim 2.7 on 24 February 2015 at 12:03:11.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -48,12 +48,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 185 - ((30 * winheight(0) + 31) / 62)
+let s:l = 173 - ((38 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-185
-normal! 09|
+173
+normal! 022|
 lcd ~/Workspace/battlesnake
 tabnext 1
 if exists('s:wipebuf')

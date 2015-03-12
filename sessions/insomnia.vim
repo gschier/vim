@@ -1,6 +1,6 @@
 " ~/.vim/sessions/insomnia.vim:
 " Vim session script.
-" Created by session.vim 2.7 on 23 February 2015 at 22:13:13.
+" Created by session.vim 2.7 on 11 March 2015 at 12:46:40.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -26,10 +26,11 @@ endif
 set shortmess=aoO
 badd +360 javascript/src/app.jsx
 badd +32 javascript/src/header.jsx
-badd +6 javascript/storage.js
+badd +63 javascript/storage.js
 badd +253 javascript/src/sidebar.jsx
+badd +0 manifest.json
 silent! argdel *
-edit javascript/storage.js
+edit manifest.json
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -43,51 +44,11 @@ setlocal fdl=4
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-4
-silent! normal! zo
-30
-silent! normal! zo
-36
-silent! normal! zo
-59
-silent! normal! zo
-67
-silent! normal! zo
-70
-silent! normal! zo
-105
-silent! normal! zo
-126
-silent! normal! zo
-168
-silent! normal! zo
-195
-silent! normal! zo
-207
-silent! normal! zo
-36
-silent! normal! zo
-63
-silent! normal! zo
-71
-silent! normal! zo
-74
-silent! normal! zo
-109
-silent! normal! zo
-130
-silent! normal! zo
-172
-silent! normal! zo
-196
-silent! normal! zo
-208
-silent! normal! zo
-let s:l = 51 - ((24 * winheight(0) + 21) / 43)
+let s:l = 14 - ((13 * winheight(0) + 29) / 59)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-51
+14
 normal! 018|
 tabnext 1
 if exists('s:wipebuf')

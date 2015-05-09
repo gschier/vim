@@ -1,11 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/gschier/Workspace/swu/sendwithus'
-let g:netrw_dirhist_2='/home/gschier/Workspace/swu/sendwithus/static'
-let g:netrw_dirhist_3='/home/gschier/Workspace/swu/sendwithus/static/dist'
-let g:netrw_dirhist_4='/home/gschier/Workspace/swu/sendwithus/static/dist/js'
-let g:netrw_dirhist_5='/home/gschier/Workspace/swu/sendwithus/static/dist/js/lib'
-let g:netrw_dirhist_6='/home/gschier/Workspace/swu/sendwithus/static'
-let g:netrw_dirhist_7='/home/gschier/Workspace/swu/sendwithus/static/dist'
-let g:netrw_dirhist_8='/home/gschier/Workspace/swu/sendwithus/static/dist/js'
-let g:netrw_dirhist_9='/home/gschier/Workspace/swu/sendwithus/static/dist/js/lib'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/gschier/Workspace/to-read/ToRead/build'
+let g:netrw_dirhist_2='/home/gschier/go/src/github.com/gschier/sample.go'
+let g:netrw_dirhist_3='/home/gschier/Workspace/go/src/github.com/sendwithus/sendwithus_customers'

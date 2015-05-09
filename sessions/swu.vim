@@ -1,6 +1,6 @@
 " ~/.vim/sessions/swu.vim:
 " Vim session script.
-" Created by session.vim 2.7 on 11 March 2015 at 17:50:43.
+" Created by session.vim 2.7 on 28 March 2015 at 13:16:00.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -27,8 +27,11 @@ set shortmess=aoO
 badd +38 apps/dashboard/templates/dashboard/modals/view_email.html
 badd +9 static/src/coffee/app/modals/ViewEmailModalViewModel.coffee
 badd +38 apps/webutil/decorators.py
+badd +96 apps/api/v1/views/send.py
+badd +305 apps/drips/models.py
+badd +120 apps/drips/workers.py
 silent! argdel *
-edit apps/dashboard/templates/dashboard/modals/view_email.html
+edit apps/drips/workers.py
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -43,12 +46,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 38 - ((29 * winheight(0) + 30) / 60)
+let s:l = 120 - ((22 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-38
-normal! 053|
+120
+normal! 013|
 lcd ~/Workspace/swu/sendwithus
 tabnext 1
 if exists('s:wipebuf')

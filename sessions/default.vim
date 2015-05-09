@@ -1,10 +1,10 @@
 " ~/.vim/sessions/default.vim:
 " Vim session script.
-" Created by session.vim 2.7 on 16 December 2014 at 20:49:35.
+" Created by session.vim 2.7 on 03 April 2015 at 22:03:31.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 14
+silent! set guifont=Ubuntu\ Mono\ 16
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -13,7 +13,7 @@ if &background != 'dark'
 	set background=dark
 endif
 if !exists('g:colors_name') || g:colors_name != 'gruvbox' | colorscheme gruvbox | endif
-call setqflist([])
+call setqflist([{'lnum': 139, 'col': 5, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/customers/ajax.py', 'text': '    data_blob = json.dumps(pruned_data, indent=4)'}, {'lnum': 278, 'col': 47, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/dashboard/templates/dashboard/includes/customer_details.html', 'text': '                        <pre data-bind="text: data_blob">'}, {'lnum': 7, 'col': 10, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'static/src/js/dashboard/CustomerDetailsViewModel.js', 'text': '    self.data_blob = ko.observable('''');'}, {'lnum': 79, 'col': 26, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'static/src/js/dashboard/CustomerDetailsViewModel.js', 'text': '                    self.data_blob(JSON.stringify(data.data, null, 4));'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0

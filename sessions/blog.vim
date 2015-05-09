@@ -1,10 +1,10 @@
 " ~/.vim/sessions/blog.vim:
 " Vim session script.
-" Created by session.vim 2.7 on 12 February 2015 at 14:15:37.
+" Created by session.vim 2.7 on 19 April 2015 at 12:08:44.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 14
+silent! set guifont=Ubuntu\ Mono\ 17
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -13,7 +13,7 @@ if &background != 'dark'
 	set background=dark
 endif
 if !exists('g:colors_name') || g:colors_name != 'gruvbox' | colorscheme gruvbox | endif
-call setqflist([{'lnum': 9, 'col': 14, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': '/home/gschier/balloon.json', 'text': '            "staticUrl": "",'}, {'lnum': 3, 'col': 16, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'content/blog/2013/11/16/Creating Pure CSS Lightboxes With The :target Selector.md', 'text': '<link href="{{ staticUrl }}/styles/lightbox.css" rel="stylesheet" type="text/css">'}, {'lnum': 6, 'col': 16, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'content/blog/2013/11/16/Creating Pure CSS Lightboxes With The :target Selector.md', 'text': '  <img src="{{ staticUrl }}/images/pig-small.jpg">'}, {'lnum': 10, 'col': 16, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'content/blog/2013/11/16/Creating Pure CSS Lightboxes With The :target Selector.md', 'text': '  <img src="{{ staticUrl }}/images/pig-big.jpg">'}, {'lnum': 50, 'col': 16, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'content/blog/2013/11/16/Creating Pure CSS Lightboxes With The :target Selector.md', 'text': '  <img src="{{ staticUrl }}/images/pig-small.jpg">'}, {'lnum': 55, 'col': 16, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'content/blog/2013/11/16/Creating Pure CSS Lightboxes With The :target Selector.md', 'text': '  <img src="{{ staticUrl }}/images/pig-big.jpg">'}])
+call setqflist([{'lnum': 1, 'col': 41, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'content/blog/2013/08/12/How to Root Nexus 7 (2013) in Linux.md', 'text': 'I found a great [XDA post](http://forum.xda-developers.com/showthread.php?t=2382051) showing how to root the new Nexus 7 (2013) on Windows, so I made some slight modifications and got it working from my Linux terminal. Here''s what I did:'}, {'lnum': 7, 'col': 32, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'content/blog/2013/08/12/How to Root Nexus 7 (2013) in Linux.md', 'text': '- [Windows Guide](http://forum.xda-developers.com/showthread.php?t=2382051)'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
@@ -24,10 +24,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 static/styles/main.css
-badd +0 dist/styles/main.css
+badd +121 balloon.json
+badd +4 content/index.html
+badd +260 layouts/default.html
+badd +5 content/blog/index.html
+badd +192 content/blog/2015/04/19/Switching\ From\ Vim\ to\ IntelliJ.md
 silent! argdel *
-edit dist/styles/main.css
+edit content/blog/2015/04/19/Switching\ From\ Vim\ to\ IntelliJ.md
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -42,12 +45,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 6 - ((5 * winheight(0) + 13) / 27)
+let s:l = 192 - ((42 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-6
-normal! 06|
+192
+normal! 0
 lcd ~/Workspace/blog
 tabnext 1
 if exists('s:wipebuf')

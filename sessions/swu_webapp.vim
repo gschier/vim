@@ -1,6 +1,6 @@
-" ~/.vim/sessions/swu_webapp.vim:
+" ~/Dropbox/Nerd Configs/vim/sessions/swu_webapp.vim:
 " Vim session script.
-" Created by session.vim 2.12 on 29 December 2015 at 12:21:22.
+" Created by session.vim 2.12 on 14 January 2016 at 14:24:00.
 " Open this file in Vim and run :source % to restore your session.
 
 if exists('g:syntax_on') != 0 | syntax off | endif
@@ -41,12 +41,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 27) / 54)
+let s:l = 1 - ((0 * winheight(0) + 38) / 76)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
-normal! 0162l
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

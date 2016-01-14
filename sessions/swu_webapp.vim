@@ -1,33 +1,32 @@
-" ~/.vim/sessions/swu_docs.vim:
+" ~/.vim/sessions/swu_webapp.vim:
 " Vim session script.
-" Created by session.vim 2.7 on 02 February 2015 at 16:24:21.
+" Created by session.vim 2.12 on 29 December 2015 at 12:21:22.
 " Open this file in Vim and run :source % to restore your session.
 
-set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 15
-if exists('g:syntax_on') != 1 | syntax on | endif
-if exists('g:did_load_filetypes') != 1 | filetype on | endif
-if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
-if exists('g:did_indent_on') != 1 | filetype indent on | endif
+if exists('g:syntax_on') != 0 | syntax off | endif
+if exists('g:did_load_filetypes') != 0 | filetype off | endif
+if exists('g:did_load_ftplugin') != 0 | filetype plugin off | endif
+if exists('g:did_indent_on') != 0 | filetype indent off | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'gruvbox' | colorscheme gruvbox | endif
-call setqflist([{'lnum': 5, 'col': 39, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/integrations/segio/models.py', 'text': 'from boto.dynamodb2.exceptions import ConditionalCheckFailedException'}, {'lnum': 67, 'col': 16, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/integrations/segio/models.py', 'text': '        except ConditionalCheckFailedException:'}, {'lnum': 40, 'col': 51, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/logs/workers.py', 'text': '            from boto.dynamodb2.exceptions import ConditionalCheckFailedException'}, {'lnum': 43, 'col': 20, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': '', 'pattern': '', 'filename': 'apps/logs/workers.py', 'text': '            except ConditionalCheckFailedException:'}])
+if !exists('g:colors_name') || g:colors_name != 'wombat' | colorscheme wombat | endif
+call setqflist([])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Workspace/swu/docs
+cd ~/Workspace/swu/web-app
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +111 v1/customers.md
-badd +1 v1/logs.md
+badd +1 ~/Desktop/positive.go
+badd +1 Procfile
+badd +1 ~/Desktop/foo.html
 silent! argdel *
-edit v1/customers.md
+edit ~/Desktop/foo.html
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -42,13 +41,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 73 - ((35 * winheight(0) + 32) / 65)
+let s:l = 1 - ((0 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-73
-normal! 028|
-lcd ~/Workspace/swu/docs
+1
+normal! 0162l
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

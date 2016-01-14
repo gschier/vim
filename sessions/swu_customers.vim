@@ -1,14 +1,12 @@
 " ~/.vim/sessions/swu_customers.vim:
 " Vim session script.
-" Created by session.vim 2.10.1 on 08 May 2015 at 22:46:42.
+" Created by session.vim 2.12 on 25 August 2015 at 14:32:42.
 " Open this file in Vim and run :source % to restore your session.
 
-set guioptions=aegimrLt
-silent! set guifont=Ubuntu\ Mono\ 16
-if exists('g:syntax_on') != 1 | syntax on | endif
-if exists('g:did_load_filetypes') != 1 | filetype on | endif
-if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
-if exists('g:did_indent_on') != 1 | filetype indent on | endif
+if exists('g:syntax_on') != 0 | syntax off | endif
+if exists('g:did_load_filetypes') != 0 | filetype off | endif
+if exists('g:did_load_ftplugin') != 0 | filetype plugin off | endif
+if exists('g:did_indent_on') != 0 | filetype indent off | endif
 if &background != 'dark'
 	set background=dark
 endif
@@ -19,7 +17,7 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Workspace/go/src/github.com/sendwithus/sendwithus_customers
+cd ~/
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -42,13 +40,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 21 - ((20 * winheight(0) + 22) / 45)
+let s:l = 1 - ((0 * winheight(0) + 29) / 59)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-21
-normal! 03|
-lcd ~/Workspace/go/src/github.com/sendwithus/sendwithus_customers
+1
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf

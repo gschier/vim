@@ -1,1 +1,0 @@
-/home/gschier/Dropbox/ubuntu/vim/vimrc

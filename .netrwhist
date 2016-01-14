@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/gschier/Workspace/to-read/ToRead/build'
 let g:netrw_dirhist_2='/home/gschier/go/src/github.com/gschier/sample.go'
 let g:netrw_dirhist_3='/home/gschier/Workspace/go/src/github.com/sendwithus/sendwithus_customers'
+let g:netrw_dirhist_4='/System/Library/CoreServices/Menu Extras/Volume.menu'

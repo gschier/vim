@@ -1,9 +1,9 @@
-" ~/Dropbox/Nerd Configs/vim/sessions/swu_webapp.vim:
+" ~/Dropbox/Nerd Configs/VIM/sessions/swu_webapp.vim:
 " Vim session script.
-" Created by session.vim 2.12 on 14 January 2016 at 14:24:00.
+" Created by session.vim 2.12 on 09 November 2016 at 11:39:51.
 " Open this file in Vim and run :source % to restore your session.
 
-if exists('g:syntax_on') != 0 | syntax off | endif
+if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 0 | filetype off | endif
 if exists('g:did_load_ftplugin') != 0 | filetype plugin off | endif
 if exists('g:did_indent_on') != 0 | filetype indent off | endif
@@ -17,16 +17,15 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Workspace/swu/web-app
+cd ~/Workspace/insomnia/electron
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 ~/Desktop/positive.go
-badd +1 Procfile
-badd +1 ~/Desktop/foo.html
+badd +1 ./app/main.js
+argglobal
 silent! argdel *
-edit ~/Desktop/foo.html
+edit ./app/main.js
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -41,7 +40,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 38) / 76)
+let s:l = 1 - ((0 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
